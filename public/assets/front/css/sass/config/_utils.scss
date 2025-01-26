@@ -1,0 +1,792 @@
+:root {
+  --white: #fff;
+  --white-2: #ecedf0;
+  --black: #000000;
+  --primary: #d9043e;
+  --secondary: #f2055c;
+  --success: #146c43;
+  --burgundy: #660000;
+  --light-brown: #aa552a;
+  --yellow: #fe9615;
+  --text: #383838;
+  --text-2: #5c5c5c;
+  --text-3: #c6c6c6;
+  --light-gray: #fafafa;
+  --gray: #f3f3f3;
+  --gray-2: #f7f5f2;
+  --gray-3: #e2e6e9;
+  --gray-4: #d9d9d9;
+  --gray-5: #cccccc;
+  --gray-6: #696969;
+  --gray-7: #4e4e4e;
+  --dark-gray: #252525;
+  --indigo: #134563;
+  --swiper-theme-color: $secondary;
+  --swiper-navigation-color: #0f1c44;
+  --swiper-navigation-size: 26px;
+  --opacity5: 50%;
+}
+/*Custom Color ve background class*/
+$primary: #d9043e;
+$secondary: #f2055c;
+$success: #146c43;
+$light-gray: #fafafa;
+$gray: #f3f3f3;
+$gray-3: #cccccc;
+$gray-6: #696969;
+$gray-7: #4e4e4e;
+$black: #000000;
+$white: #ffffff;
+
+$colors: (
+  "primary": $primary,
+  "secondary": $secondary,
+  "light-gray": $light-gray,
+  "gray": $gray,
+  "gray-3": $gray-3,
+  "gray-6": $gray-6,
+  "gray-7": $gray-7,
+  "dark": $black,
+  "light": $white,
+  "success": $success // "tertiary": $tertiary,,,,,,,
+);
+
+@mixin generate-button-classes($colors) {
+  @each $name, $color in $colors {
+    .button-#{$name} {
+      background-color: $color !important;
+      border: 1px solid $color !important;
+
+      input {
+        width: 100%;
+        height: 100% !important;
+        background-color: rgba(0, 0, 0, 0) !important;
+        border: none !important;
+        color: $white !important;
+        padding: 0 !important;
+      }
+      @media screen and (max-width: 991.98px) {
+        &:hover {
+          color: var(--white);
+        }
+      }
+      @media screen and (min-width: 992px) {
+        &:not(.disabled):hover {
+          color: $color;
+
+          input {
+            color: $color !important;
+          }
+        }
+        &:hover {
+          input {
+            color: $color !important;
+          }
+        }
+      }
+
+      &.disabled {
+        border-color: var(--gray-2) !important;
+        background-color: var(--gray-2) !important;
+        color: var(--gray-5) !important;
+        pointer-events: none;
+
+        &:after {
+          display: none;
+        }
+        input {
+          color: var(--gray-5) !important;
+        }
+        &:before {
+          content: "";
+          width: 100%;
+          height: 100%;
+          top: 0;
+          left: 0;
+          z-index: 9;
+          position: absolute;
+        }
+      }
+    }
+  }
+}
+@mixin generate-background-classes($colors) {
+  @each $name, $color in $colors {
+    .bg-#{$name} {
+      background-color: $color !important;
+    }
+  }
+}
+
+@mixin generate-text-classes($colors) {
+  @each $name, $color in $colors {
+    .text-#{$name} {
+      color: $color !important;
+    }
+  }
+}
+@mixin generate-border-classes($colors) {
+  @each $name, $color in $colors {
+    .border-#{$name} {
+      border-color: $color !important;
+    }
+  }
+}
+
+@include generate-border-classes($colors);
+@include generate-background-classes($colors);
+@include generate-text-classes($colors);
+@include generate-button-classes($colors);
+
+/*Custom container class*/
+@mixin generate-containers($container-max-width) {
+  @each $size in $container-max-width {
+    $class: nth($size, 1);
+    $width: nth($size, 2);
+
+    .container-#{$class} {
+      max-width: $width;
+      margin-right: auto;
+      margin-left: auto;
+      width: 100%;
+      position: relative;
+      &:not(.noSpace) {
+        @media screen and (max-width: 1280px) {
+          padding-left: 40px;
+          padding-right: 40px;
+        }
+        @media screen and (max-width: 991.98px) {
+          padding-left: 16px;
+          padding-right: 16px;
+        }
+      }
+
+      @media screen and (min-width: 992px) {
+        padding-left: 8.3334vw;
+        padding-right: 8.3334vw;
+      }
+
+      @media screen and (min-width: 1921px) {
+        padding-left: 160px;
+        padding-right: 160px;
+      }
+    }
+  }
+}
+
+$container-max-width: (
+  ("sm", 570px),
+  ("md", 768px),
+  ("lg", 992px),
+  ("xl", 1200px),
+  ("2xl", 1400px),
+  ("3xl", 1920px)
+);
+
+@include generate-containers($container-max-width);
+
+$padding-values: (
+  0: 0,
+  1: 0.25rem,
+  2: 0.5rem,
+  // Diğer değerleri ekleyebilirsiniz
+);
+
+// Temel class
+%padding-class {
+  padding-right: 0 !important; // veya padding: 0 !important; kullanabilirsiniz
+}
+
+// Ekran boyutuna özel mixin
+@mixin padding-responsive($size) {
+  @media (min-width: $size) {
+    @content;
+  }
+}
+
+// Ekran boyutuna özel class'lar
+// Ekran boyutuna özel class'lar
+@each $key, $value in $padding-values {
+  .pe-#{$key} {
+    @extend %padding-class;
+  }
+
+  @include padding-responsive(576px) {
+    .pe-sm-#{$key} {
+      padding-right: #{$value} !important; // veya padding: #{$value} !important; kullanabilirsiniz
+    }
+  }
+
+  @include padding-responsive(768px) {
+    .pe-md-#{$key} {
+      padding-right: #{$value} !important;
+    }
+  }
+
+  @include padding-responsive(992px) {
+    .pe-lg-#{$key} {
+      padding-right: #{$value} !important;
+    }
+  }
+
+  @include padding-responsive(1200px) {
+    .pe-xl-#{$key} {
+      padding-right: #{$value} !important;
+    }
+  }
+
+  @include padding-responsive(1400px) {
+    .pe-xxl-#{$key} {
+      padding-right: #{$value} !important;
+    }
+  }
+}
+a:hover {
+  @media screen and (max-width: 991.98px) {
+    color: inherit;
+  }
+}
+/*Standart css style*/
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    transition: all 0.3s linear;
+  }
+}
+
+.videoWrapper {
+  width: 100%;
+  height: 100%;
+
+  video,
+  iframe {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+.line-clamp {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  &-3 {
+    -webkit-line-clamp: 1;
+  }
+}
+
+.noresize{
+  resize: none;
+}
+/*fixButton*/
+.fixBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: currentColor;
+  color: var(--white);
+  font-family: "GilroyMedium";
+  font-weight: 500;
+  font-size: 15px;
+  height: 45px;
+  border-radius: 10px;
+  padding: 0 20px;
+  transition: all 0.3s linear;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  min-width: 95px;
+  white-space: nowrap;
+  gap: 10px;
+  cursor: pointer;
+
+  @media screen and (max-width: 1600px) {
+    height: 45px;
+    font-size: 13px;
+  }
+
+  // @media screen and (max-width: 991.98px) {
+  //   height: 45px;
+  //   font-size: 13px;
+  // }
+
+  svg,
+  img {
+    margin-right: 20px;
+  }
+
+  &:after {
+    content: "";
+    width: 0;
+    height: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transition: all 0.3s linear;
+    background-color: var(--white);
+    z-index: -1;
+  }
+  &.notAfter {
+    &:after {
+      display: none;
+    }
+  }
+  &.notBefore {
+    &:before {
+      display: none;
+    }
+  }
+
+  &.button-outline {
+    color: var(--black);
+    border: 1px solid var(--gray-5);
+    background-color: rgba(0, 0, 0, 0);
+    &:after {
+      background-color: var(--primary);
+    }
+
+    input {
+      width: 100%;
+      height: 100% !important;
+      border: none !important;
+      padding: 0 !important;
+      color: var(--black);
+      border: 1px solid var(--gray-5);
+      background-color: rgba(0, 0, 0, 0);
+    }
+    @media screen and (min-width: 992px) {
+      &:hover {
+        color: var(--white);
+
+        input {
+          color: var(--white);
+        }
+      }
+
+      &:not(.disabled):hover {
+        color: var(--white);
+
+        input {
+          color: var(--white) !important;
+        }
+      }
+    }
+    &.notAfter {
+      @media screen and (min-width: 992px) {
+        &:hover {
+          color: var(--primary);
+          border-color: var(--primary);
+        }
+      }
+    }
+    &.bold {
+      font-family: "GilroySemibold";
+    }
+    &.type2 {
+      border-color: var(--primary);
+      color: var(--primary);
+      @media screen and (min-width: 992px) {
+        &:hover {
+          color: var(--white);
+        }
+      }
+    }
+
+    &.type3 {
+      border-color: var(--white);
+      color: var(--white);
+      &:after {
+        background-color: var(--white);
+      }
+      @media screen and (min-width: 992px) {
+        &:hover {
+          color: var(--primary);
+        }
+      }
+    }
+
+    // &.disabled {
+    //   border-color: var(--gray-2) !important;
+    //   background-color: var(--gray-2) !important;
+    //   color: var(--gray-5) !important;
+    //   pointer-events: none;
+
+    //   &:after {
+    //     display: none;
+    //   }
+    //   input {
+    //     color: var(--gray-5) !important;
+    //   }
+    //   &:before {
+    //     content: "";
+    //     width: 100%;
+    //     height: 100%;
+    //     top: 0;
+    //     left: 0;
+    //     z-index: 9;
+    //     position: absolute;
+    //   }
+    // }
+  }
+  &.button-outline-2 {
+    color: var(--gray-6);
+    border: 1px solid #cbc8c8;
+    background-color: rgba(0, 0, 0, 0);
+    font-family: "GilroyMedium";
+    font-size: 16px;
+    &:after {
+      display: none;
+    }
+
+    @media screen and (min-width: 992px) {
+      &:hover {
+        color: var(--primary);
+        border-color: var(--primary);
+      }
+    }
+  }
+  &.moreButton {
+    height: 60px;
+    width: 200px;
+    font-size: 16px;
+    @media screen and (max-width: 991.98px) {
+      &:hover {
+        color: var(--white);
+      }
+    }
+    @media screen and (max-width: 480px) {
+      width: 100%;
+      max-width: 400px;
+    }
+  }
+
+  &.button-white {
+    background-color: var(--white);
+    color: var(--primary);
+    border: 1px solid var(--white);
+    &:after {
+      background-color: var(--primary);
+    }
+    @media screen and (min-width: 992px) {
+      &:hover {
+        color: var(--white);
+      }
+    }
+  }
+
+  @media screen and (min-width: 992px) {
+    &.addNewButton {
+      min-width: 300px;
+    }
+    &:hover {
+      &.button-light {
+        color: var(--white) !important;
+      }
+
+      &:after {
+        width: 100%;
+      }
+    }
+  }
+}
+.notLinkButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: currentColor;
+  color: var(--white);
+  font-family: "GilroyMedium";
+  font-weight: 500;
+  font-size: 15px;
+  height: 45px;
+  border-radius: 10px;
+  padding: 0 20px;
+  transition: all 0.3s linear;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  min-width: 95px;
+  white-space: nowrap;
+  gap: 10px;
+
+  @media screen and (max-width: 1440px) {
+    height: 50px;
+    font-size: 14px;
+  }
+
+  @media screen and (max-width: 991.98px) {
+    height: 45px;
+    font-size: 13px;
+  }
+  &.primaryButton {
+    background-color: #d9043e !important;
+    border: 1px solid #d9043e !important;
+  }
+}
+.textLink {
+  color: var(--primary);
+  position: relative;
+  font-family: "GilroySemibold";
+  font-size: 13px;
+  display: inline-flex;
+  align-items: center;
+  gap: 20px;
+  margin-top: 20px;
+  transition: all 0.3s linear;
+  @media screen and (max-width: 991.98px) {
+    margin-top: 5px;
+    &:hover {
+      color: var(--primary);
+    }
+  }
+
+  &:after {
+    content: "";
+    border-bottom: 1px solid var(--primary);
+    width: 100%;
+    height: 1px;
+    left: 0;
+    bottom: 0;
+    position: absolute;
+    transition: all 0.3s linear;
+  }
+  .icon-arrow-long {
+    font-size: 30px;
+  }
+  &.noAfter {
+    &:after {
+      display: none;
+    }
+  }
+
+  @media screen and (min-width: 992px) {
+    &:hover {
+      color: var(--black);
+      &:after {
+        width: 0;
+      }
+    }
+  }
+}
+
+.verticalCustomScroll {
+  width: 100%;
+  overflow: hidden;
+  overflow-x: auto;
+  &::-webkit-scrollbar {
+    background-color: rgba(217, 4, 62, 0.4);
+    height: 4px;
+    box-shadow: none;
+    border: none;
+    outline: 0;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--gray-4);
+    height: 4px;
+    box-shadow: none;
+    border: none;
+    outline: 0;
+    /* Chrome, Safari, Edge ve Opera için */
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: rgba(217, 4, 62, 0.4);
+    height: 4px;
+    box-shadow: none;
+    border: none;
+    outline: 0;
+    /* Chrome, Safari, Edge ve Opera için */
+  }
+}
+
+.fMedium {
+  font-family: "GilroyMedium" !important;
+}
+
+.formSelectWrapper {
+  .customSelect {
+    width: 100%;
+    height: 50px;
+    border: 1px solid #bfbfbf;
+    border-radius: 10px;
+    overflow: hidden;
+    @media screen and (max-width: 1600px) {
+      height: 45px;
+    }
+    .current {
+      display: flex;
+      align-items: center;
+      height: 50px;
+      @media screen and (max-width: 1600px) {
+        height: initial;
+        font-size: 12px;
+      }
+    }
+    &:after {
+      border: none;
+    }
+
+    &:focus {
+      outline: 0 !important;
+      box-shadow: none !important;
+    }
+    &.open {
+      overflow: visible;
+      .list {
+        width: 100%;
+        max-height: 150px;
+        overflow-y: auto;
+        border-radius: 10px;
+        box-shadow: 0 3px 20px -7px rgba(0, 0, 0, 1);
+        border: 1px solid var(--gray-5);
+      }
+    }
+    &.type2 {
+      &:after {
+        border-bottom: 2px solid #999;
+        border-right: 2px solid #999;
+        width: 8px;
+        height: 8px;
+      }
+
+      .current {
+        font-family: "GilroySemibold";
+        color: var(--gray-7);
+        font-size: 16px;
+      }
+
+      .option {
+        font-family: "GilroyMedium";
+        color: var(--gray-7);
+        font-size: 16px;
+
+        &.focus {
+          color: var(--primary);
+        }
+        &.selected {
+          &.focus {
+          }
+        }
+      }
+    }
+
+    &.eventsFilterSelect {
+      &.open {
+        .list {
+          max-height: initial;
+        }
+      }
+    }
+  }
+}
+.currencly {
+  font-family: sans-serif;
+  font-weight: 600;
+}
+
+.rounded-end-5 {
+  border-radius: 0 24px 24px 0;
+}
+.rounded-start-5 {
+  border-radius: 24px 0 0 24px;
+}
+
+.info {
+  display: flex;
+  align-items: flex-start;
+  font-family: "GilroyMedium";
+  font-size: 14px;
+  line-height: 20px;
+  gap: 10px;
+  color: var(--gray-6);
+  opacity: 0.8;
+  @media screen and (max-width: 1600px) {
+    font-size: 13px;
+  }
+
+  .icon-info {
+    font-size: 20px;
+    color: var(--gray-6);
+    @media screen and (max-width: 1600px) {
+      font-size: 18px;
+    }
+  }
+}
+
+.overlay {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.8);
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  display: none;
+  z-index: 999;
+}
+
+mark {
+  &.status {
+    padding: 8px 15px;
+    font-size: 16px;
+    border-radius: 6px;
+    font-style: italic;
+    color: var(--white);
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: "GilroySemibold";
+    @media screen and (max-width: 1600px) {
+      font-size: 13px;
+    }
+    &:before {
+      content: "";
+      width: 10px;
+      min-width: 10px;
+      height: 10px;
+      border-radius: 100%;
+      background-color: var(--primary);
+      @media screen and (max-width: 1600px) {
+        width: 6px;
+        min-width: 6px;
+        height: 6px;
+      }
+    }
+    &.waiting {
+      background-color: var(--yellow);
+      color: var(--white) !important;
+
+      &:before {
+        background-color: var(--white) !important;
+      }
+    }
+    &.paymentWait {
+      background-color: var(--primary);
+      color: var(--white) !important;
+      &:before {
+        background-color: var(--white);
+      }
+    }
+    &.completed {
+      background-color: var(--success);
+      color: var(--white) !important;
+      &:before {
+        background-color: var(--white);
+      }
+    }
+    &.cancelled {
+      filter: grayscale(1);
+      color: var(--black);
+    }
+  }
+}

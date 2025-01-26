@@ -1,0 +1,134 @@
+.accCategoryTitle{
+  font-size: 24px;
+  color: var(--primary);
+  line-height: 34px;
+  font-family: 'GilroySemibold';
+  padding-top: 30px;
+  padding-bottom: 10px;
+  padding-left: 16px;
+}
+.customAcc {
+  .accordion-item {
+    margin-bottom: 20px;
+    background-color: rgba(0, 0, 0, 0);
+    .accordion-button {
+      background-color: rgba(0, 0, 0, 0);
+      border: none;
+      font-size: 17px;
+      color: var(--gray-7);
+      // color: var(--primary);
+      line-height: 25px;
+      font-family: "GilroySemibold";
+      box-shadow: none;
+      padding-left: 0;
+      overflow: hidden;
+      align-items: flex-start;
+      @media screen and (max-width: 991.98px) {
+        font-size: 15px;
+        line-height: 22px;
+      }
+      &:after {
+        content: "\e903";
+        transform: rotate(90deg);
+        font-family: "customFont";
+        background-image: none;
+        margin-top: 4px;
+        transform-origin: center;
+        display: flex;
+        width: 15px;
+        align-items: center;
+        justify-content: center;
+      }
+      &:focus {
+        border: none;
+        box-shadow: none;
+      }
+      &:not(.collapsed) {
+        color: var(--primary);
+        // color: var(--gray-7);
+        &:focus {
+          box-shadow: none;
+        }
+        &:after {
+          transform: rotate(270deg);
+        }
+      }
+      // &.collapsed {
+      //   background-color: rgba(0, 0, 0, 0.03);
+      // }
+    }
+    &:last-child {
+      @media screen and (max-width: 991.98px) {
+        border-bottom: var(--bs-accordion-border-width) solid
+          var(--bs-accordion-border-color);
+      }
+    }
+    .accordion-body {
+      font-size: 16px;
+      line-height: 25px;
+      color: var(--gray-6);
+      font-family: "GilroyRegular";
+      padding-top: 0;
+      padding-bottom: 30px;
+      padding-left: 0;
+      @media screen and (max-width: 991.98px) {
+        padding-left: 0;
+        font-size: 14px;
+      }
+
+      a {
+        font-family: "GilroySemibold";
+        color: var(--primary);
+        position: relative;
+        &:after {
+          content: "";
+          border-bottom: 1px dotted var(--primary);
+          position: absolute;
+          left: 0;
+          bottom: -2px;
+          width: 100%;
+          transition: all 0.3s linear;
+        }
+        @media screen and (min-width: 992px) {
+          &:hover {
+            &:after {
+              width: 0;
+            }
+          }
+        }
+      }
+      b {
+        font-family: "GilroySemibold";
+        color: var(--primary);
+      }
+      code {
+        color: var(--primary);
+        font-family: "GilroyRegular";
+      }
+    }
+  }
+
+  &.type2 {
+    .accordion-item {
+      .accordion-button {
+        padding-left: 15px;
+        background-color: rgba(0, 0, 0, 0);
+
+      }
+      .accordion-body {
+        padding-left: 15px;
+      }
+    }
+  }
+}
+
+.pageContent {
+  .customAcc {
+    .accordion-item {
+      .accordion-button {
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+  }
+}
