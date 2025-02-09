@@ -1,0 +1,659 @@
+.section {
+  position: relative;
+  .sectionHead {
+    padding-bottom: 40px;
+    @media screen and (max-width: 991.98px) {
+      padding-bottom: 15px;
+    }
+    .sectionTitle {
+      font-size: 44px;
+      line-height: 50px;
+      color: var(--fifth);
+      font-weight: 700;
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      @media screen and (max-width: 991.98px) {
+        font-size: 24px;
+        line-height: 32px;
+        display: block;
+      }
+
+      .backTitle {
+        position: absolute;
+        font-size: 74px;
+        line-height: 81px;
+        letter-spacing: 2px;
+        color: #ededed;
+        font-weight: 400;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        z-index: -1;
+        top: 50%;
+        transform: translateY(-50%);
+        text-align: center;
+        @media screen and (max-width: 991.98px) {
+          font-size: 30px;
+          line-height: 42px;
+        }
+      }
+    }
+
+    &.light {
+      .sectionTitle {
+        color: var(--white);
+      }
+    }
+    &.type2 {
+      .sectionTitle {
+        font-size: 35.5px;
+        line-height: 42px;
+        font-weight: 400;
+        letter-spacing: -0.5px;
+        @media screen and (max-width:1280px) {
+          font-size: 28px;
+          line-height: 34px;
+        }
+        @media screen and (max-width: 991.98px) {
+          font-size: 24px;
+          line-height: 32px;
+        }
+        b {
+          font-weight: 800;
+        }
+      }
+    }
+    &.beetween {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      @media screen and (max-width:991.98px) {
+        display: block;
+      }
+    }
+    &.bgType {
+      background-color: var(--secondary);
+      background-image: url("../../images/statics/iconsBg-light.png");
+      background-position: 454px 18%;
+      background-size: 133%;
+      background-repeat: no-repeat;
+      min-height: 115px;
+      display: flex;
+      align-items: center;
+      background-blend-mode: multiply;
+      @media screen and (max-width: 991.98px) {
+        background-position: left center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        min-height: 115px;
+        display: flex;
+        align-items: center;
+        background-blend-mode: multiply;
+        text-align: center;
+      }
+    }
+    .textLink {
+      margin-left: auto;
+      color: var(--white);
+      @media screen and (max-width: 991.98px) {
+        margin-top: 10px;
+      }
+      @media screen and (min-width: 992px) {
+        &:hover {
+          color: var(--fifth);
+        }
+      }
+    }
+  }
+  .sectionContainer {
+    position: relative;
+  }
+  &:not(.firstSection) {
+    margin-block: 50px;
+    @media screen and (max-width: 991.98px) {
+      margin-block: 30px;
+    }
+  }
+
+  &.homeSection {
+    height: 100vh;
+    background-color: var(--sixth);
+    background-image: url("../../images/statics/homeBg.png");
+    background-size: cover;
+    background-position: 0 50%;
+    background-repeat: no-repeat;
+    &:before,
+    &:after {
+      content: "";
+      position: absolute;
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+    &:before {
+      background-image: url("../../images/statics/homeBgTop.png");
+      background-position: top left;
+      width: 255px;
+      height: 217px;
+      left: 0;
+      top: 0;
+    }
+    &:after {
+      background-image: url("../../images/statics/homeBgBottom.png");
+      background-position: bottom right;
+      width: 191px;
+      height: 197px;
+      right: 0;
+      bottom: 0;
+    }
+    .homeContent {
+      height: 100%;
+      display: flex;
+      align-items: flex-end;
+      padding-top: 160px;
+    }
+    .schoolMobilSlideCard {
+      height: 75%;
+      position: relative;
+      z-index: 2;
+      max-height: 635px;
+      @media screen and (max-width: 1024px) {
+        max-height: 450px;
+      }
+      @media screen and (max-width: 480px) {
+        height: 300px;
+      }
+      .cards {
+        height: 100%;
+        .card {
+          border-radius: 31px 31px 0 0;
+          overflow: hidden;
+          height: 100%;
+          a {
+            height: 100%;
+            display: flex;
+          }
+        }
+      }
+    }
+  }
+
+  .nextSectionButton {
+    position: absolute;
+    left: -50px;
+    color: var(--white);
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    bottom: 20px;
+    gap: 7px;
+    @media screen and (max-width: 1300px) {
+      left: -25px;
+    }
+    @media screen and (max-width: 1280px) {
+      display: none;
+    }
+    .verticalText {
+      text-transform: uppercase;
+      font-size: 14px;
+      font-weight: 700;
+    }
+    .downIcon {
+      transition: all 0.3s linear;
+    }
+    @media screen and (min-width: 992px) {
+      &:hover {
+        .downIcon {
+          transform: translateY(7px);
+        }
+      }
+    }
+  }
+
+  &.akademikBirimler {
+    background-image: url("../../images/statics/homeBg-white.png");
+    background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat;
+  }
+
+  /*kayıt section*/
+  .waveImgRight {
+    position: absolute;
+    // right: -315px;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-top: 60px;
+    width: 21.6vw;
+    right: -17.4vw;
+    @media screen and (max-width: 991.98px) {
+      display: none;
+    }
+  }
+  .signupWrapper {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-bottom: 80px;
+    padding-bottom: 20px;
+    @media screen and (max-width:991.98px) {
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+    figure {
+      // width: 345px;
+      // left: -75px;
+      width: 18vw;
+      left: -4vw;
+      position: absolute;
+      height: auto;
+      z-index: 1;
+      margin-top: 40px;
+      @media screen and (max-width: 991.98px) {
+        display: none;
+      }
+    }
+    .signUpContent {
+      width: 100%;
+      background-image: url("../../images/statics/homeBg-white.png");
+      background-color: var(--fifth);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: top center;
+      min-height: 180px;
+      background-blend-mode: color-burn;
+      border-radius: 44px;
+      // padding-left: 300px;
+      padding-left: 15.7vw;
+      position: relative;
+      display: flex;
+      align-items: center;
+      @media screen and (max-width: 991.98px) {
+        padding: 20px;
+        flex-direction: column;
+        border-radius: 25px;
+        text-align: center;
+      }
+
+      .desc {
+        .caption {
+          font-size: 48.5px;
+          line-height: 40px;
+          color: var(--white);
+          font-weight: 400;
+          @media screen and (max-width: 1440px) {
+            font-size: 40px;
+          }
+          @media screen and (max-width: 1366px) {
+            font-size: 30px;
+            line-height: 35px;
+          }
+          @media screen and (max-width: 1280px) {
+            font-size: 24px;
+            line-height: 30px;
+          }
+          @media screen and (max-width: 991.98px) {
+            font-size: 18px;
+            line-height: 25px;
+          }
+          b {
+            font-weight: 800;
+            display: block;
+          }
+        }
+        .slogan {
+          font-size: 48.5px;
+          line-height: 40px;
+          color: var(--white);
+          font-weight: 400;
+          @media screen and (max-width: 991.98px) {
+            font-size: 18px;
+            line-height: 25px;
+          }
+        }
+        p {
+          font-size: 18.5px;
+          color: var(--white);
+          font-weight: 400;
+          line-height: 27px;
+          margin-top: 20px;
+          @media screen and (max-width: 1440px) {
+            font-size:16px;
+          }
+          @media screen and (max-width: 991.98px) {
+            font-size: 14px;
+            line-height: 21px;
+            margin-top: 10px;
+            margin-bottom: 20px;
+          }
+        }
+      }
+      .signUpButton {
+        margin-left: auto;
+        margin-right: -15px;
+        @media screen and (max-width: 991.98px) {
+          margin-right: auto;
+          width: 100%;
+          max-width: 300px;
+        }
+      }
+    }
+  }
+
+  /*Ege Bilim Okulları Mezun Profili*/
+  .graduatedSection {
+  }
+  .gradutedWrapper {
+    display: flex;
+    align-items: stretch;
+    padding-top: 15px;
+    @media screen and (max-width: 991.98px) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .leftColumn {
+      position: relative;
+      width: 500px;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding-bottom: 50px;
+      padding-top: 50px;
+      border-radius: 0 17px 17px 0;
+      @media screen and (max-width:1300px) {
+        width: 320px;
+      }
+      @media screen and (max-width: 991.98px) {
+        width: 100%;
+        margin-bottom: 20px;
+        padding-left: 16px;
+        padding-right: 16px;
+        text-align: center;
+        border-top: 1px solid #f2f2f2;
+      }
+      .colorsLine {
+        height: 10px;
+        border-radius: 0 0 17px 0;
+      }
+      .backgroundWrap {
+        width: calc(100% + 155px);
+        left: -155px;
+        top: 0;
+        position: absolute;
+        z-index: -1;
+        height: 100%;
+        @media screen and (max-width: 991.98px) {
+          width: 100%;
+          left: 0;
+          top: 0;
+        }
+      }
+      .title {
+        font-size: 44.5px;
+        line-height: 48px;
+        color: var(--fifth);
+        font-weight: 400;
+        @media screen and (max-width:1440px) {
+          font-size: 30px;
+          line-height: 37px;
+        }
+        @media screen and (max-width: 991.98px) {
+          font-size: 18px;
+          line-height: 25px;
+        }
+        b {
+          font-weight: 700;
+        }
+      }
+      .subTitle {
+        font-size: 44.5px;
+        line-height: 48px;
+        color: var(--fifth);
+        font-weight: 700;
+        @media screen and (max-width:1440px) {
+          font-size: 30px;
+          line-height: 37px;
+        }
+        @media screen and (max-width: 991.98px) {
+          font-size: 18px;
+          line-height: 25px;
+        }
+      }
+      p {
+        font-size: 18.5px;
+        line-height: 27px;
+        color: #0e0e0e;
+        font-weight: 400;
+        @media screen and (max-width:1440px) {
+          font-size: 16px;
+          line-height: 22px;
+        }
+        @media screen and (max-width: 991.98px) {
+          font-size: 14px;
+          line-height: 21px;
+        }
+        b {
+          font-weight: 700;
+        }
+      }
+      .logo {
+        width: 106px;
+        @media screen and (max-width: 991.98px) {
+          margin: 20px auto 0;
+        }
+      }
+    }
+    .rightColumn {
+      width: calc(100% - 500px);
+      padding-left: 20px;
+      margin-top: -15px;
+      @media screen and (max-width:1300px) {
+        width: calc(100% - 320px);
+      }
+      @media screen and (max-width: 991.98px) {
+        width: 100%;
+        padding-left: 0;
+        margin-top: 0;
+      }
+    }
+  }
+  .infoCard {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    height: 100%;
+    @media screen and (max-width: 991.98px) {
+      height: auto;
+    }
+    .item {
+      width: calc(25% - 15px);
+      position: relative;
+      min-height: calc(50% - 6px);
+      height: calc(50% - 6px);
+      padding-top: 17px;
+      @media screen and (max-width: 991.98px) {
+        height: 230px;
+        min-height: initial;
+      }
+      @media screen and (max-width: 480px) {
+        width: calc(50% - 15px);
+      }
+      .imageWrapper {
+        border-radius: 17px;
+        img {
+          mix-blend-mode: luminosity;
+          opacity: 26%;
+        }
+        &.bg-primary ~ .image-overlay .icon-circle-check {
+          background-color: var(--primary);
+        }
+        &.bg-secondary ~ .image-overlay .icon-circle-check {
+          background-color: var(--secondary);
+        }
+        &.bg-third ~ .image-overlay .icon-circle-check {
+          background-color: var(--third);
+        }
+        &.bg-fourth ~ .image-overlay .icon-circle-check {
+          background-color: var(--fourth);
+        }
+        &.bg-white {
+          box-shadow: 0 1px 9px rgba(0, 0, 0, 0.2);
+          img {
+            opacity: 1;
+            mix-blend-mode: unset;
+          }
+        }
+      }
+      .image-overlay {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+        text-align: center;
+        padding: 0 20px 40px;
+        @media screen and (max-width: 1440px) {
+          padding: 0 16px 20px;
+        }
+        .desc {
+          font-size: 18px;
+          font-weight: 400;
+          line-height: 25px;
+          color: var(--white);
+          @media screen and (max-width: 1440px) {
+            font-size: 16px;
+            line-height: 20px;
+          }
+          @media screen and (max-width: 991.98px) {
+            font-size: 14px;
+            line-height: 21px;
+          }
+          b {
+            font-weight: 700;
+          }
+        }
+        .icon-circle-check {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          margin: 0 auto;
+          font-size: 50px;
+          width: 62px;
+          height: 62px;
+          border-radius: 100%;
+          color: var(--white);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          @media screen and (max-width: 1440px) {
+            font-size: 36px;
+            width: 50px;
+            height: 50px;
+          }
+          @media screen and (max-width: 991.98px) {
+            font-size: 36px;
+            width: 42px;
+            height: 42px;
+          }
+        }
+      }
+    }
+  }
+
+  &.newsSection {
+    .sectionContent {
+      margin-top: -28px;
+      @media screen and (max-width:991.98px) {
+        margin-top: -23px;
+      }
+    }
+  }
+
+  /*Sosyal Medya section*/
+  .socialMedia {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    @media screen and (max-width:991.98px) {
+      margin-top: 10px;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .item {
+      display: flex;
+      align-items: center;
+      color: #a9a9a9;
+      font-size: 11px;
+      line-height: 16px;
+      font-weight: 800;
+      transition: all 0.3s linear;
+      gap: 7px;
+      @media screen and (max-width:991.98px) {
+        width: calc(50% - 5px)
+      }
+      .name {
+        color: #1c1c1c;
+        font-weight: 800;
+        font-size: 18px;
+        letter-spacing: -0.5px;
+        line-height: 24px;
+        transition: all 0.3s linear;
+        @media screen and (max-width:1280px) {
+          font-size: 16px;
+          line-height: 21px;
+        }
+        @media screen and (max-width:991.98px) {
+          font-size: 14px;
+          line-height: 21px;
+        }
+      }
+      .customIcon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 33px;
+        height: 33px;
+        border-radius: 100%;
+        background-color: var(--white);
+        box-shadow: 0 8px 9px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s linear;
+
+        &.icon-facebook {
+          color: #3b5999;
+        }
+        &.icon-twitter {
+          color: #03a9f4;
+        }
+        &.icon-youtube {
+          color: #ff0000;
+        }
+        img {
+          max-width: 20px;
+          object-fit: contain;
+        }
+      }
+      @media screen and (min-width: 992px) {
+        &:hover {
+          color: var(--fifth);
+          .name {
+            color: var(--fifth);
+          }
+          .customIcon {
+            transform: scale(1.1);
+          }
+        }
+      }
+    }
+  }
+}
