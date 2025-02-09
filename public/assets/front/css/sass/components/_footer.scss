@@ -1,184 +1,182 @@
 footer {
-  padding: 75px 0;
+  background-image: url("../../images/statics/iconsBg-light.png");
+  background-color: var(--fifth);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
+  background-blend-mode: multiply;
+  position: relative;
+  margin-top: 170px;
+  @media screen and (max-width: 991.98px) {
+    margin-top: 120px;
+  }
+
   .footer {
-    border-radius: 25px 25px 0 0;
-    padding: 30px 70px;
-    @media screen and (max-width: 991.98px) {
-      padding: 30px 16px;
-    }
-  }
-
-  .socialWrapper {
-    padding-top: 50px;
-    .socialMedia {
+    .footerBody {
       display: flex;
-      align-items: center;
-      gap: 20px;
-      a {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 40px;
-        height: 40px;
-        border-radius: 100%;
-        background-color: var(--gray-3);
-        font-size: 20px;
-        transition: all 0.3s linear;
-        @media screen and (min-width: 992px) {
-          &:hover {
-            background-color: var(--primary);
-            color: var(--white);
-          }
-        }
-      }
-    }
-  }
-  .footerTop {
-    border-bottom: 1px solid var(--white);
-    padding-bottom: 70px;
-    @media screen and (max-width:1600px) {
-      padding-bottom: 50px;
-    }
-    @media screen and (max-width: 991.98px) {
-      padding-bottom: 0px;
-    }
-
-    .verticalCustomScroll {
-      width: calc(100% + 30px);
-      position: relative;
-      left: -16px; 
-
-      @media screen and (max-width:991.98px) {
-        display: flex;
+      align-items: flex-start;
+      @media screen and (max-width: 991.98px) {
+        flex-direction: column;
         align-items: center;
       }
-
-      // &::after {
-      //   content: "";
-      //   display: inline-block;
-      //   width: 30px; /* Sağda boşluk bırakacak genişlik */
-      //   flex-shrink: 0;
-      // }
-    }
-    .title {
-      font-family: "GilroySemibold";
-      font-size: 25px;
-      color: var(--black);
-      line-height: 32px;
-      margin-bottom: 30px;
-      @media screen and (max-width:1600px) {
-        font-size: 22px;
-        line-height: 30px;
-      }
-      @media screen and (max-width: 991.98px) {
-        font-size: 20px;
-        line-height: 28px;
-      }
-    }
-  }
-  .footerContent {
-    display: flex;
-    align-items: flex-start;
-    padding-top: 70px;
-    @media screen and (max-width:1600px) {
-      padding-top: 50px;
-    }
-    @media screen and (max-width: 991.98px) {
-      flex-direction: column;
-      align-items: center;
-      padding-top: 50px;
-    }
-
-    .leftColumn {
-      width: 35%;
-      min-width: 280px;
-
-      .logoText {
-        font-family: "GilroyRegular";
-        font-size: 14px;
-        line-height: 20px;
-        color: var(--gray-6);
-        max-width: 280px;
-        display: block;
-        margin-top: 15px;
-      }
-    }
-    .rightColumn {
-      width: 65%;
-      @media screen and (max-width: 991.98px) {
-        width: 100%;
-      }
-    }
-  }
-  .footerMenu {
-    display: flex;
-    align-items: flex-start;
-    @media screen and (max-width: 1280px) {
-      flex-wrap: wrap;
-    }
-    @media screen and (max-width: 991.98px) {
-      flex-wrap: wrap;
-      margin-top: 50px;
-    }
-    .menuListColumn {
-      flex: 1;
-      @media screen and (max-width: 1280px) {
-        min-width: 50%;
-        margin-bottom: 40px;
-      }
-      @media screen and (max-width: 991.98px) {
-        text-align: center;
-        min-width: 100%;
-        flex: auto;
-      }
-
-      .title {
-        font-family: "GilroySemibold";
-        font-size: 16px;
-        line-height: 24px;
-        color: var(--black);
-        margin-bottom: 25px;
-        @media screen and (max-width: 1600px) {
-          font-size: 14px;
-          margin-bottom: 10px;
-        }
+      .leftColumn {
+        border-right: 1px solid var(--white);
+        min-height: 400px;
+        display: flex;
+        flex-direction: column;
+        padding-right: 100px;
         @media screen and (max-width: 991.98px) {
-          margin-bottom: 15px;
+          border-right: none;
+          padding-left: 0;
+          padding-right: 0;
+          margin: 0 auto;
+          min-height: initial;
         }
-      }
-      ul {
-        li {
-          a {
-            font-size: 15px;
-            line-height: 24px;
-            color: var(--gray-6);
-            font-family: "GilroyRegular";
-            padding: 5px 0;
-            display: inline-flex;
-            align-items: center;
-            position: relative;
-            transition: all 0.3s linear;
-            @media screen and (max-width: 1600px) {
-              font-size: 13px;
-              line-height: 20px;
-            }
+        .call {
+          display: flex;
+          align-items: center;
+          font-weight: 400;
+          gap: 20px;
+          color: var(--white);
+          border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+          padding-bottom: 16px;
 
-            &:after {
-              content: "";
-              width: 0;
-              height: 1px;
-              background-color: var(--primary);
-              position: absolute;
-              bottom: 5px;
-              left: 0;
-              transition: all 0.3s linear;
+          .icon-headset {
+          }
+          .text {
+            font-size: 17px;
+            line-height: 25px;
+            font-weight: 400;
+            @media screen and (max-width: 991.98px) {
+              font-size: 14px;
+              line-height: 21px;
+            }
+            b {
+              font-weight: 800;
+            }
+          }
+          a {
+            font-size: 30px;
+            font-weight: 400;
+            line-height: 37px;
+            display: block;
+            transition: all 0.3s linear;
+            @media screen and (max-width: 991.98px) {
+              font-size: 16px;
+              line-height: 23px;
             }
             @media screen and (min-width: 992px) {
               &:hover {
                 color: var(--primary);
-
-                &:after {
-                  width: 100%;
+              }
+            }
+            b {
+              font-weight: 800;
+            }
+          }
+        }
+        .follow {
+          padding-top: 20px;
+          & > span {
+            display: block;
+            font-size: 19px;
+            font-weight: 400;
+            color: var(--white);
+            @media screen and (max-width: 991.98px) {
+              font-size: 14px;
+              line-height: 21px;
+            }
+            b {
+              font-weight: 800;
+            }
+          }
+          .socialMedia {
+            margin-top: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            a {
+              color: var(--white);
+              transition: all 0.3s linear;
+              @media screen and (min-width: 992px) {
+                &:hover {
+                  color: var(--primary);
+                }
+              }
+            }
+          }
+        }
+        .logo {
+          width: 145px;
+          margin-top: auto;
+          @media screen and (max-width: 991.98px) {
+            width: 100px;
+            margin: 20px auto;
+          }
+          img {
+          }
+        }
+      }
+      .rightColumn {
+        flex: 1;
+        padding-left: 80px;
+        @media screen and (max-width: 991.98px) {
+          border-top: 1px solid rgba(255, 255, 255, 0.3);
+          padding-left: 0;
+          flex: none;
+          width: 100%;
+          padding-top: 30px;
+          margin-top: 10px;
+        }
+      }
+      .footerMenu {
+        .footerMenuList {
+          display: flex;
+          align-items: flex-start;
+          @media screen and (max-width: 991.98px) {
+            display: block;
+          }
+          & > li {
+            width: 33.3%;
+            padding-left: 20px;
+            padding-right: 20px;
+            @media screen and (max-width: 991.98px) {
+              width: auto;
+              text-align: center;
+            }
+            .menuTitle,
+            & > span {
+              font-size: 21.5px;
+              color: var(--white);
+              font-weight: 800;
+              @media screen and (max-width: 991.98px) {
+                font-size: 16px;
+                line-height: 24px;
+                margin-top: 10px;
+                display: block;
+              }
+            }
+            .subMenu {
+              margin-top: 15px;
+              @media screen and (max-width: 991.98px) {
+                margin-top: 5px;
+              }
+              li {
+                a {
+                  font-weight: 400;
+                  font-size: 19px;
+                  line-height: 26px;
+                  color: var(--white);
+                  @media screen and (max-width: 991.98px) {
+                    font-size: 14px;
+                    line-height: 21px;
+                  }
+                  @media screen and (min-width: 992px) {
+                    &:hover {
+                      color: var(--primary);
+                    }
+                  }
                 }
               }
             }
@@ -186,123 +184,114 @@ footer {
         }
       }
     }
-  }
-
-  .footerBottom {
-    padding-top: 100px;
-    @media screen and (max-width: 991.98px) {
-      flex-direction: column;
-      padding-top: 50px;
-    }
-    .copyRight {
-      font-size: 14px;
-      line-height: 20px;
-      color: var(--gray-6);
-      @media screen and (max-width:1600px) {
-        font-size: 13px;
-      }
-    }
-
-    .designLogo {
-      @media screen and (max-width: 991.98px) {
-        margin: 30px auto !important;
-      }
-    }
-  }
-
-  .customTab {
-    border-bottom: 1px solid var(--gray-4);
-    gap: 25px;
-    flex-wrap: nowrap;
-    padding-left: 16px !important;
-    // padding-right: 30px !important;
-    @media screen and (max-width:1600px) {
-      gap: 15px;
-    }
-    @media screen and (max-width: 991.98px) {
-      gap: 0;
-    }
-
-    .nav-item {
-      @media screen and (max-width: 991.98px) {
-        margin-right: 16px;
-      }
-      .nav-link {
-        background-color: var(--gray-2);
-        border: 1px solid var(--gray-3);
-        border-radius: 10px 10px 0 0;
-        font-size: 15px;
-        color: var(--gray-6);
-        font-family: "GilroySemibold";
-        height: 52px;
-        padding: 0 25px;
-        white-space: nowrap;
-        
-        @media screen and (max-width: 1600px) {
-          font-size: 14px;
-          padding: 0 15px;
-          height: 45px;
-        }
-        &.active {
-          background-color: var(--gray-3);
-        }
-        @media screen and (min-width: 992px) {
-          &:hover {
-            background-color: var(--gray-3);
-          }
-        }
-      }
-      &.show {
-      }
-    }
-  }
-  .customTabContents {
-    padding: 20px 0;
-    @media screen and (max-width:1600px) {
-      padding: 0;
-    }
-    .listItems {
+    .footerBottom {
       display: flex;
-      align-items: flex-start;
-      flex-wrap: wrap;
-      .item {
-        width: 16.66%;
-        padding: 0 30px 20px;
+      align-items: center;
+      justify-content: center;
+      padding-bottom: 13px;
+      padding-top: 13px;
+      margin-top: 20px;
+      .copyRight {
+        font-size: 15.5px;
+        line-height: 22px;
+        font-weight: 400;
+        color: var(--white);
+        letter-spacing: -0.15px;
         @media screen and (max-width: 991.98px) {
-          width: 50%;
-          padding-left: 0;
-          padding-right: 20px;
+          font-size: 12px;
+          line-height: 20px;
+          text-align: center;
         }
-        @media screen and (max-width: 570px) {
-          // width: 100%;
+        b {
+          font-weight: 800;
         }
-        .cityName {
-          font-family: "GilroyMedium";
-          color: var(--black);
-          font-size: 15px;
-          transition: all 0.3s linear;
-          line-height: 24px;
-          @media screen and (max-width: 991.98px) {
-            font-size: 14px;
-          }
-        }
-        .boatName {
-          font-family: "GilroyMedium";
-          font-size: 14px;
-          color: var(--gray-6);
-          transition: all 0.3s linear;
-          @media screen and (max-width: 991.98px) {
-            font-size: 13px;
-          }
-        }
+      }
+    }
+  }
+}
 
-        @media screen and (min-width: 992px) {
-          &:hover {
-            .cityName {
-              color: var(--primary);
-            }
-          }
+.kesfetSection {
+  display: flex;
+  align-items: center;
+  position: relative;
+  top: -75px;
+  @media screen and (max-width: 991.98px) {
+    margin-block: 0 !important;
+  }
+  figure {
+    // width: 296px;
+    // left: -75px;
+    position: absolute;
+    height: auto;
+    z-index: 1;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-top: -15px;
+    width: 15.417vw;
+    left: -4vw;
+    @media screen and (max-width: 991.98px) {
+      display: none;
+    }
+  }
+  .kesfetContent {
+    width: 100%;
+    background-image: url("../../images/statics/iconsBg-light.png");
+    background-color: var(--primary);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+    min-height: 150px;
+    background-blend-mode: multiply;
+    border-radius: 44px;
+    // padding-left: 300px;
+    padding-left: 15.7vw;
+    position: relative;
+    display: flex;
+    align-items: center;
+    @media screen and (max-width: 991.98px) {
+      padding-left: 0;
+      border-radius: 25px;
+      flex-direction: column;
+      padding: 16px 20px;
+      text-align: center;
+    }
+
+    .desc {
+      max-width: 630px;
+      @media screen and (max-width: 991.98px) {
+        max-width: initial;
+      }
+      .caption {
+        font-size: 36px;
+        line-height: 44px;
+        color: var(--white);
+        font-weight: 400;
+        @media screen and (max-width: 991.98px) {
+          font-size: 18px;
+          line-height: 25px;
         }
+        b {
+          font-weight: 800;
+        }
+      }
+      p {
+        font-size: 16px;
+        color: var(--white);
+        font-weight: 400;
+        line-height: 25px;
+        margin-top: 10px;
+        @media screen and (max-width: 991.98px) {
+          font-size: 14px;
+          line-height: 21px;
+        }
+      }
+    }
+    .kesfetButton {
+      margin-left: auto;
+      margin-right: -15px;
+      @media screen and (max-width: 991.98px) {
+        margin-right: auto;
+        margin-top: 20px;
       }
     }
   }

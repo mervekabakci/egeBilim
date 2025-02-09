@@ -1,221 +1,275 @@
-.customTabs {
+.customTab {
   border: none;
-  border-bottom: none;
-  gap: 15px 10px;
-
-  .nav-item {
-    .nav-link {
-      font-size: 14px;
-      color: var(--gray-6);
-      font-family: "GilroySemibold";
-      position: relative;
-      border: none;
-      height: 45px;
-      display: inline-flex;
-      align-items: center;
-      padding-left: 25px;
-      padding-right: 25px;
-      padding-top: 0;
-      padding-bottom: 0;
-      border: 1px solid var(--primary);
+  justify-content: center;
+  gap: 14px;
+  margin-bottom: 40px;
+  @media screen and (max-width: 991.98px) {
+    flex-wrap: nowrap;
+    width: auto;
+    justify-content: flex-start;
+    padding-left: 16px;
+    margin-bottom: 20px;
+    &:after {
+      content: "";
+      width: 2px;
+      min-width: 2px;
+      height: 30px;
       background-color: rgba(0, 0, 0, 0);
-      border-radius: 25px;
-      font-size: 16px;
-      color: #444444;
-      @media screen and (max-width: 991.98px) {
-        font-size: 14px;
-        padding-left: 16px;
-        padding-right: 16px;
+      display: block;
+    }
+  }
+  .nav-item {
+    padding: 0;
+  }
+  .nav-link {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    height: 50px;
+    border: 2px solid var(--text-3);
+    padding: 0 18px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    color: #cacaca;
+    font-size: 21px;
+    font-weight: 700;
+    line-height: 27px;
+    transition: all 0.3s linear;
+    background-color: var(--white);
+    @media screen and (max-width: 991.98px) {
+      height: 45px;
+      font-size: 14px;
+      gap: 10px;
+      white-space: nowrap;
+    }
+    :before {
+      color: #cacaca;
+      transition: all 0.3s linear;
+    }
+    .colorsLine {
+      height: 0;
+    }
+    &.active {
+      color: var(--primary);
+      box-shadow: 0 1px 9px rgba(0, 0, 0, 0.2);
+      background-color: var(--white);
+      border-bottom: none;
+      :before {
+        color: var(--primary);
       }
-
-      &.active {
-        color: var(--white);
-        background-color: var(--primary);
+      .colorsLine {
+        height: 4px;
       }
-
-      @media screen and (min-width: 992px) {
-        &:hover {
-          background-color: var(--primary);
-          color: var(--white);
+    }
+    @media screen and (min-width: 992px) {
+      &:hover {
+        color: var(--primary);
+        box-shadow: 0 1px 9px rgba(0, 0, 0, 0.2);
+        border-bottom: none;
+        background-color: var(--white);
+        :before {
+          color: var(--primary);
+        }
+        .colorsLine {
+          height: 4px;
         }
       }
     }
   }
-
+  &.start {
+    justify-content: flex-start;
+  }
   &.type2 {
-    border-bottom: 1px solid var(--primary);
-
-    &.nav-tabs {
-      gap: 0;
-      .nav-item {
-        &.show {
-          .nav-link {
-            border-color: var(--gray);
-            border-bottom: none;
-          }
-        }
-      }
-      .nav-link {
-        font-family: "GilroyMedium";
-        color: var(--gray-7);
-        padding: 15px 30px;
-        background-color: var(--gray);
-        margin-bottom: 0;
-        border-radius: 0;
-        font-size: 16px;
-        @media screen and (max-width:991.98px) {
-          padding: 10px 15px;
-          font-size: 14px;
-        }
-        &:first-child{
-          border-radius: 10px 0 0 0;
-        }
-        &:last-child{
-          border-radius: 0 10px 0 0;
-        }
-        &.active {
-          border-color: var(--primary);
-          border-bottom: none;
-          background-color: var(--primary);
-          color: var(--white);
-        }
-        &:not(.active):hover {
-          border-color: rgba(0, 0, 0, 0);
-          color: var(--primary);
-        }
-      }
+    .nav-link {
+      box-shadow: 0 8px 9px rgba(0, 0, 0, 0.2);
+      border: none;
     }
   }
 }
+.customTabContent {
+}
 
-.customTabContents {
-  margin-top: 34px;
-  @media screen and (max-width:1600px) {
-    margin-top: 15px;
-  }
+.schoolContent {
+  display: flex;
+  align-items: flex-start;
+  padding-bottom: 30px;
   @media screen and (max-width: 991.98px) {
-    margin-top: 18px;
-    margin-bottom: 30px;
-  }
-  .note {
-    font-size: 14px;
-    color: var(--gray-6);
-    line-height: 22px;
-    font-family: "GilroySemibold";
-  }
-  .tab-pane {
-    position: relative;
+    flex-direction: column-reverse;
   }
 
-  .sliderButtonWrapper {
-    position: absolute;
-    right: 0;
-    top: -69px;
-
+  .leftColumn {
+    // width: calc(100% - 410px);
+    width: 68%;
     @media screen and (max-width: 991.98px) {
-      top: auto;
-      bottom: -50px;
-      left: 0;
-      right: 0;
-      justify-content: center;
+      width: 100%;
     }
-  }
-
-  .descContainer {
-    max-width: 500px;
-    .title {
-      font-size: 60px;
-      line-height: 65px;
-      color: var(--black);
-      font-family: "GilroySemibold";
-      @media screen and (max-width: 1600px) {
-        font-size: 50px;
-        line-height: 55px;
-      }
+    .caption {
+      font-weight: 400;
+      color: var(--primary);
+      font-size: 48px;
+      line-height: 46px;
       @media screen and (max-width: 1440px) {
-        font-size: 40px;
-        line-height: 45px;
+        font-size: 35px;
+        line-height: 42px;
       }
       @media screen and (max-width: 991.98px) {
-        font-size: 30px;
-        line-height: 40px;
+        font-size: 22px;
+        line-height: 29px;
+      }
+      b {
+        font-weight: 800;
       }
     }
-    .category {
-      font-family: "GilroySemibold";
-      font-size: 40px;
-      line-height: 65px;
+    .boldCaption {
+      font-weight: 800;
       color: var(--primary);
-      @media screen and (max-width: 1600px) {
-        font-size: 34px;
-        line-height: 45px;
+      font-size: 46px;
+      line-height: 60px;
+      @media screen and (max-width: 1440px) {
+        font-size: 40px;
+        line-height: 47px;
       }
       @media screen and (max-width: 991.98px) {
         font-size: 20px;
         line-height: 27px;
       }
     }
-    p {
-      color: #444444;
-      font-family: "GilroyRegular";
-      font-size: 16px;
-      line-height: 25px;
-      margin-top: 15px;
+    .paragraph {
+      color: var(--text);
+      font-size: 20px;
+      line-height: 27px;
+      font-weight: 400;
+      margin-top: 30px;
+      @media screen and (max-width: 1440px) {
+        font-size: 18px;
+        line-height: 25px;
+        margin-top: 20px;
+      }
       @media screen and (max-width: 991.98px) {
         font-size: 14px;
-        line-height: 22px;
+        line-height: 21px;
+        margin-top: 15px;
+      }
+      b {
+        font-weight: 700;
       }
     }
-    .textLink {
-      margin-top: 30px;
-      font-size: 17px;
+
+    .schollEvents {
       display: flex;
-      align-items: center;
-      gap: 20px;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 40px;
+      padding-bottom: 40px;
+      margin-top: 20px;
+      padding-bottom: 20px;
+      @media screen and (max-width: 1440px) {
+        margin-top: 30px;
+      }
+      li {
+        font-size: 21px;
+        line-height: 29px;
+        font-weight: 400;
+        position: relative;
+        padding-left: 50px;
+        width: calc(50% - 10px);
+        @media screen and (max-width: 1440px) {
+          font-size: 18px;
+          line-height: 25px;
+        }
+        @media screen and (max-width: 991.98px) {
+          font-size: 14px;
+          line-height: 21px;
+          width: 100%;
+        }
+        &:before {
+          content: "\e905";
+          font-family: "CustomFont";
+          font-size: 36px;
+          color: var(--third);
+          position: absolute;
+          top: -1px;
+          left: 0;
+          @media screen and (max-width: 991.98px) {
+            font-size: 24px;
+          }
+        }
+        b {
+          font-weight: 700;
+        }
+      }
+    }
+    .schollProps {
+      display: flex;
+      align-items: stretch;
+      margin-top: 40px;
+      @media screen and (max-width: 1440px) {
+        margin-top: 30px;
+      }
       @media screen and (max-width: 991.98px) {
-        font-size: 14px;
-        line-height: 22px;
         margin-top: 10px;
       }
-      .icon-arrow-long {
-        font-size: 30px;
-      }
-      &:after {
-        display: none;
-      }
-    }
-  }
-}
+      .propsList {
+        display: flex;
+        align-items: stretch;
+        flex-wrap: wrap;
+        gap: 18px;
+        @media screen and (max-width:670px) {
+          flex-direction: column;
+          align-items: flex-start;
+          width: 100%;
+          max-width: 400px;
+        }
+        .item {
+          display: flex;
+          align-items: center;
+          opacity: 45%;
+          border: 2px solid var(--text-3);
+          border-radius: 8px;
+          padding: 0 11px;
+          min-height: 44px;
+          gap: 15px;
+          min-width: 160px;
+          flex: 1;
+          @media screen and (max-width: 670px) {
+            width: 100%;
+          }
 
-.offerNavTabs {
-  flex-direction: column;
-  align-items: flex-start;
-  border-bottom: none;
-  padding-left: 20px;
-  padding-right: 20px;
-  .nav-link {
-    font-family: "GilroyMedium";
-    font-size: 15px;
-    line-height: 25px;
-    color: var(--gray-5);
-    display: flex;
-    align-items: center;
-    gap: 7px;
-    border: none;
-    transition: all 0.3s linear;
-    padding: 4px 0;
-    &.active {
-      color: var(--gray-6);
-    }
-    @media screen and (min-width: 992px) {
-      &:hover {
-        color: var(--gray-6);
+          .title {
+            font-size: 12.5px;
+            color: var(--text);
+            line-height: 17px;
+            font-weight: 400;
+            b {
+              font-weight: 700;
+              display: block;
+            }
+          }
+        }
+      }
+
+      .fixBtn {
+        @media screen and (max-width: 991.98px) {
+          width: 100%;
+        }
       }
     }
   }
-}
-.offertabContents {
-  .tab-pane {
+  .rightColumn {
+    // width: 410px;
+    width: 31.86%;
     position: relative;
+    right: 0;
+    @media screen and (max-width: 991.98px) {
+      display: none;
+    }
+    .imageWrapper {
+      // width: 626px;
+      width: calc(100% + 216px);
+      img {
+      }
+    }
   }
 }

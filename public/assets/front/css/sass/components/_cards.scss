@@ -1,0 +1,200 @@
+.cards {
+  &:not(.swiper-wrapper) {
+    display: flex;
+    align-items: stretch;
+    gap: 20px;
+    flex-wrap: wrap;
+
+    .card {
+      flex: 1;
+      .desc {
+      }
+    }
+  }
+  .card {
+    border: none;
+    .card-img-overlay {
+      background: rgb(255, 255, 255);
+      background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgb(0, 36, 70) 115%
+      );
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      transition: all 0.3s ease-in-out;
+      padding: 0;
+
+      .captionBack {
+        position: relative;
+        font-weight: 700;
+        color: var(--white);
+        font-size: 57px;
+        line-height: 67px;
+        opacity: 4%;
+        @media screen and (max-width: 991.98px) {
+          font-size: 24px;
+          line-height: 32px;
+        }
+      }
+      .caption {
+        position: relative;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        max-height: 100px;
+        @media screen and (max-width: 991.98px) {
+          height: 53px;
+        }
+
+        .front {
+          font-weight: 700;
+          color: var(--white);
+          font-size: 21px;
+          line-height: 30px;
+          position: absolute;
+          width: 100%;
+          left: 0;
+          right: 0;
+          text-align: center;
+          top: 50%;
+          transform: translateY(-50%);
+          @media screen and (max-width: 991.98px) {
+            font-size: 16px;
+            line-height: 24px;
+          }
+        }
+      }
+
+      &.anaokulu {
+        border-bottom: 23px solid var(--primary);
+        @media screen and (max-width: 480px) {
+          border-bottom: 10px solid var(--primary);
+        }
+      }
+      &.ilkokul {
+        border-bottom: 23px solid var(--secondary);
+        @media screen and (max-width: 480px) {
+          border-bottom: 10px solid var(--secondary);
+        }
+      }
+      &.ortaokul {
+        border-bottom: 23px solid var(--third);
+        @media screen and (max-width: 480px) {
+          border-bottom: 10px solid var(--third);
+        }
+      }
+      &.anadolul {
+        border-bottom: 23px solid var(--fourth);
+        @media screen and (max-width: 480px) {
+          border-bottom: 10px solid var(--fourth);
+        }
+        .caption {
+          .front {
+            @media screen and (min-width: 992px) {
+              margin-top: 15px;
+            }
+          }
+        }
+      }
+    }
+    a {
+      @media screen and (min-width: 992px) {
+        &:hover {
+          .card-img-overlay {
+            background: linear-gradient(
+              180deg,
+              rgba(255, 255, 255, 0) 0%,
+              rgb(0, 36, 70) 100%
+            );
+          }
+        }
+      }
+    }
+  }
+
+  &.half {
+    .card {
+      width: calc(25% - 15px);
+      max-width: calc(25% - 15px);
+      @media screen and (max-width:991.98px) {
+        width: calc(50% - 15px);
+        max-width: initial;
+        flex: none;
+      }
+      @media screen and (max-width:480px) {
+        width: 100%;
+      }
+      .card-top {
+        aspect-ratio: 3 / 3.1;
+        border-radius: 25px;
+        overflow: hidden;
+        .imageWrapper {
+          border: 1px solid #f2f2f2;
+
+          img{
+            transition: all .3s linear;
+          }
+        }
+      }
+      a{
+        &.card-top{
+          @media screen and (min-width:992px) {
+            &:hover{
+              img{
+                transform: scale(1.1);
+              }
+            }
+          }
+        }
+      }
+    }
+  
+  }
+
+  &.thirdCards {
+    .card {
+      .card-top {
+        aspect-ratio: 4/2;
+        border-radius: 25px;
+        overflow: hidden;
+        img {
+          transition: all 0.3s linear;
+        }
+      }
+      .card-body {
+        background-color: #efefef;
+        border-radius: 0 0 25px 25px;
+        width: calc(100% - 46px);
+        margin: 0 auto;
+        text-align: center;
+        height: 75px;
+        .card-title {
+          color: #0b0b0b;
+          font-size: 14.5px;
+          line-height: 22px;
+          font-weight: 700;
+          transition: all 0.3s linear;
+        }
+      }
+    }
+    a {
+      &.card {
+        @media screen and (min-width: 992px) {
+          &:hover {
+            img {
+              transform: scale(1.1);
+            }
+            .card-body {
+              .card-title {
+                color: var(--primary);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

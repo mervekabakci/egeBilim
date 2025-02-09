@@ -5,7 +5,7 @@
     top: 30px;
     right: 30px;
     &:before{
-        content: "\e922";
+        content: "\e910";
             font-family: 'customFont';
             color: var(--primary);
             position: relative;
@@ -52,7 +52,7 @@
 .fancybox__nav {
     .f-button{
         &:before{
-            content: "\e906";
+            content: "\e900";
             font-family: 'customFont';
             color: var(--primary);
             position: relative;
@@ -65,13 +65,14 @@
         }
         &.is-prev{
             left: 30px!important;
-            &:before{
-                transform: rotate(180deg);
-            }
+            
         }
         
         &.is-next{
             right: 30px!important;
+            &:before{
+                transform: rotate(180deg);
+            }
         }
     }
 }
