@@ -2437,7 +2437,7 @@ header {
   padding-top: 0;
   padding-bottom: 0;
   background-color: rgba(0, 0, 0, 0);
-  z-index: 9999;
+  z-index: 999;
   display: flex;
   align-items: center;
 }
@@ -3676,439 +3676,147 @@ footer .footer .footerBottom .copyRight b {
   padding-right: 0;
 }
 
-.modal .modal-content {
-  max-height: 750px;
-}
-.modal .modal-content .modal-header {
-  padding: 20px;
-}
-.modal .modal-content .modal-header .titleColumn {
-  flex: 1;
-  text-align: center;
-  padding-right: 20px;
-}
-.modal .modal-content .modal-header .titleColumn .modal-title {
-  font-size: 24px;
-  color: var(--text);
-  font-family: "GilroySemibold";
-  line-height: 32px;
-  margin-bottom: 20px;
-}
-.modal .modal-content .modal-header .titleColumn p {
-  font-family: "GilroyRegular";
-  color: var(--gray-6);
-  font-size: 14px;
-  line-height: 22px;
-}
-.modal .modal-content .modal-header .btn-close {
-  width: 45px;
-  height: 45px;
-  background-color: var(--primary);
-  padding: 0;
-  box-shadow: none;
-  opacity: 1;
+.modal .btn-close {
   background-image: none;
+  background-color: var(--secondary);
+  color: var(--white);
+  font-size: 23px;
+  font-weight: 700;
+  width: 150px;
+  height: 60px;
+  border-radius: 8px;
+  padding: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0;
+  opacity: 1;
+  position: relative;
+  margin-left: auto;
+  box-shadow: none;
+  transition: all 0.3s linear;
 }
-.modal .modal-content .modal-header .btn-close:after {
-  content: "\e922";
-  font-family: "customFont";
-  font-size: 32px;
-  color: var(--white);
+.modal .btn-close:focus {
+  box-shadow: none;
 }
-.modal .modal-content .modal-header .btn-close.type2 {
-  position: absolute;
-  top: 20px;
-  right: 20px;
+@media screen and (max-width: 991.98px) {
+  .modal .btn-close {
+    height: 46px;
+    width: 120px;
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 992px) {
+  .modal .btn-close:hover {
+    background-color: var(--white);
+    color: var(--secondary);
+  }
+}
+.modal .modal-content {
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
 }
 .modal .modal-content .modal-body {
-  padding: 20px;
-}
-@media screen and (min-height: 750px) {
-  .modal .modal-content .modal-body {
-    min-height: 555px;
-  }
-}
-.modal .modal-content .modal-body::-webkit-scrollbar {
-  background-color: rgba(217, 4, 62, 0.4);
-  width: 4px;
-  box-shadow: none;
-  border: none;
-  outline: 0;
-}
-.modal .modal-content .modal-body::-webkit-scrollbar-thumb {
-  background-color: var(--gray-4);
-  width: 4px;
-  box-shadow: none;
-  border: none;
-  outline: 0;
-  /* Chrome, Safari, Edge ve Opera için */
-}
-.modal .modal-content .modal-body::-webkit-scrollbar-track {
-  background-color: rgba(217, 4, 62, 0.4);
-  width: 4px;
-  box-shadow: none;
-  border: none;
-  outline: 0;
-  /* Chrome, Safari, Edge ve Opera için */
-}
-.modal .modal-content .modal-body .customAcc .accordion-item {
-  margin-bottom: 20px;
-  background-color: rgba(0, 0, 0, 0);
-  margin-top: 30px;
-  border: 1px solid var(--gray);
-  border-radius: 16px;
-}
-.modal .modal-content .modal-body .customAcc .accordion-item:first-child {
-  border-top: 1px solid var(--gray);
-}
-.modal .modal-content .modal-body .customAcc .accordion-item .accordion-button {
-  font-size: 20px;
-  color: var(--text);
-  line-height: 28px;
-  font-family: "GilroySemibold";
-  box-shadow: none;
-  padding: 20px 15px;
-}
-.modal .modal-content .modal-body .customAcc .accordion-item .accordion-button.collapsed {
-  background-color: rgba(0, 0, 0, 0.03);
-}
-.modal .modal-content .modal-body .checkList {
-  display: flex;
-  align-items: stretch;
-  gap: 10px;
-}
-@media screen and (max-width: 991.98px) {
-  .modal .modal-content .modal-body .checkList {
-    flex-wrap: wrap;
-  }
-}
-@media screen and (max-width: 991.98px) {
-  .modal .modal-content .modal-body .checkList .radioCheck {
-    min-width: calc(50% - 5px);
-    max-width: 50%;
-  }
-}
-@media screen and (max-width: 480px) {
-  .modal .modal-content .modal-body .checkList .radioCheck {
-    max-width: initial;
-    width: 100%;
-  }
-}
-.modal .modal-content .modal-body .form-control {
-  color: var(--text-2);
-  font-size: 14px;
-  font-family: "GilroyMedium";
-  border: 1px solid var(--gray-4);
-  height: 50px;
-  padding-left: 16px;
-  padding-right: 24px;
-  background-color: var(--white);
-  border-radius: 6px;
-  width: 100%;
-}
-.modal .modal-content .modal-body .form-control:focus {
-  outline: 0;
-  box-shadow: none;
-}
-.modal .modal-content .modal-body .form-label {
-  display: block;
-  color: var(--text-2);
-  font-size: 14px;
-  font-family: "GilroySemibold";
-  margin-bottom: 4px;
-}
-.modal .modal-content .modal-body .eventItem span {
-  font-size: 17px;
-  line-height: 25px;
-  color: var(--text);
-  font-family: "GilroySemibold";
-}
-.modal .modal-content .modal-body .eventItem span.title {
-  color: var(--gray-7);
-  font-size: 16px;
-  line-height: 25px;
-  font-family: "GilroyMedium";
-}
-.modal .modal-content .modal-body .eventItem span.icon-date {
-  position: absolute;
-  bottom: 12px;
-  color: var(--primary);
-  right: 20px;
-}
-.modal .modal-content .modal-body .eventItem a {
-  font-size: 17px;
-  line-height: 25px;
-}
-.modal .modal-content .modal-body .eventItem a span {
-  color: var(--primary);
-}
-@media screen and (min-width: 992px) {
-  .modal .modal-content .modal-body .eventItem a:hover span {
-    color: var(--text-2);
-  }
-}
-.modal .modal-content .modal-footer {
-  padding: 20px;
-}
-@media screen and (max-width: 991.98px) {
-  .modal .modal-content .modal-footer .fixBtn {
-    height: 50px;
-    font-size: 15px;
-  }
-}
-@media screen and (max-width: 991.98px) {
-  .modal .modal-content .modal-footer .textLink {
-    font-size: 15px;
-    margin-top: 0;
-  }
-}
-.modal .modal-content .paragraph span,
-.modal .modal-content .paragraph h2 {
-  font-size: 19px;
-  margin-top: 0;
-  margin-bottom: 5px;
-  line-height: 27px;
-}
-@media screen and (max-width: 991.98px) {
-  .modal .modal-content .paragraph span,
-  .modal .modal-content .paragraph h2 {
-    font-size: 15px;
-    line-height: 22px;
-  }
-}
-.modal .customAcc .accordion-item .accordion-body {
-  padding-left: 16px;
-  padding-right: 16px;
-}
-.modal .customAcc .accordion-item .accordion-button {
-  padding-left: 16px;
-  padding-right: 16px;
-}
-.modal .customAcc .accordion-item .accordion-button:after {
+  min-height: 300px;
   display: flex;
   align-items: center;
-  justify-content: center;
 }
-.modal .boatInformation {
+.modal .modalContentWrapper {
+  height: 100%;
   display: flex;
+  flex-direction: column;
   align-items: flex-start;
-  gap: 30px;
+  width: 100%;
 }
-@media screen and (max-width: 640px) {
-  .modal .boatInformation {
-    gap: 20px;
-    flex-wrap: wrap;
+.modal .modalContentWrapper p {
+  color: var(--white);
+  font-weight: 600;
+  font-size: 23px;
+  line-height: 30px;
+  margin-bottom: 16px;
+}
+@media screen and (max-width: 991.98px) {
+  .modal .modalContentWrapper p {
+    font-size: 16px;
+    line-height: 25px;
   }
 }
-.modal .boatInformation > div {
-  width: calc(50% - 15px);
-}
-@media screen and (max-width: 640px) {
-  .modal .boatInformation > div {
-    width: 100%;
-  }
-}
-.modal .modalHead {
-  padding-bottom: 20px;
-  text-align: center;
+.modal .modalContentWrapper .searchInputWrapper {
+  background-color: var(--white);
+  border-radius: 8px;
   position: relative;
-  padding-left: 30px;
-  padding-right: 30px;
-}
-.modal .modalHead .modal-title {
-  font-family: "GilroySemibold";
-  font-size: 20px;
-  color: var(--primary);
-}
-.modal.type2 .modal-header {
-  border-bottom: none;
-  padding: 0;
-}
-.modal.type2 .modal-header .btn-close {
-  position: absolute;
-  right: 20px;
-  top: 10px;
-  z-index: 99;
-}
-.modal.type2 .modalHead {
-  padding-left: 0;
-  padding-right: 0;
-}
-
-.hizmetlerModalBackButton {
-  width: 30px;
-  height: 30px;
-  background-color: var(--primary);
-  border-radius: 6px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  border: 1px solid var(--primary);
-  transition: all 0.3s linear;
-}
-.hizmetlerModalBackButton .icon-arrow-right-2 {
-  transform: rotate(180deg);
-  display: flex;
-  font-size: 24px;
-  color: var(--white);
-  transition: all 0.3s linear;
-}
-@media screen and (min-width: 992px) {
-  .hizmetlerModalBackButton:hover {
-    background-color: var(--white);
-  }
-  .hizmetlerModalBackButton:hover .icon-arrow-right-2 {
-    color: var(--primary);
-  }
-}
-
-#UyeGirisiModal hr,
-#UyeOlModal hr,
-#sifremiUnuttumModal hr,
-#UyeGirisiTekneModal hr,
-#UyeOlTekneModal hr,
-#sifremiUnuttumTekneModal hr {
-  margin-top: 2rem !important;
-  margin-bottom: 2rem !important;
-}
-#UyeGirisiModal .modal-dialog,
-#UyeOlModal .modal-dialog,
-#sifremiUnuttumModal .modal-dialog,
-#UyeGirisiTekneModal .modal-dialog,
-#UyeOlTekneModal .modal-dialog,
-#sifremiUnuttumTekneModal .modal-dialog {
-  max-width: 650px;
-}
-@media screen and (min-height: 900px) {
-  #UyeGirisiModal .modal-content,
-  #UyeOlModal .modal-content,
-  #sifremiUnuttumModal .modal-content,
-  #UyeGirisiTekneModal .modal-content,
-  #UyeOlTekneModal .modal-content,
-  #sifremiUnuttumTekneModal .modal-content {
-    min-height: 750px;
-  }
-  #UyeGirisiModal .modal-content .modal-header .btn-close,
-  #UyeOlModal .modal-content .modal-header .btn-close,
-  #sifremiUnuttumModal .modal-content .modal-header .btn-close,
-  #UyeGirisiTekneModal .modal-content .modal-header .btn-close,
-  #UyeOlTekneModal .modal-content .modal-header .btn-close,
-  #sifremiUnuttumTekneModal .modal-content .modal-header .btn-close {
-    width: 35px;
-    height: 35px;
-  }
-}
-#UyeGirisiModal .modal-body,
-#UyeOlModal .modal-body,
-#sifremiUnuttumModal .modal-body,
-#UyeGirisiTekneModal .modal-body,
-#UyeOlTekneModal .modal-body,
-#sifremiUnuttumTekneModal .modal-body {
-  padding: 50px;
-  max-width: 500px;
+  justify-content: space-between;
+  height: 90px;
+  padding: 16px;
   width: 100%;
-  margin: 0 auto;
 }
-@media screen and (max-width: 480px) {
-  #UyeGirisiModal .modal-body,
-  #UyeOlModal .modal-body,
-  #sifremiUnuttumModal .modal-body,
-  #UyeGirisiTekneModal .modal-body,
-  #UyeOlTekneModal .modal-body,
-  #sifremiUnuttumTekneModal .modal-body {
-    padding: 50px 20px;
+@media screen and (max-width: 991.98px) {
+  .modal .modalContentWrapper .searchInputWrapper {
+    height: 60px;
+    padding: 7px;
   }
 }
-
-#hizmetlerModal .modal-content,
-#hizmetlerDetailsModal .modal-content {
-  padding-bottom: 30px;
-}
-#hizmetlerModal .modal-header,
-#hizmetlerDetailsModal .modal-header {
-  padding-left: 50px;
-  padding-right: 50px;
-}
-@media screen and (max-width: 480px) {
-  #hizmetlerModal .modal-header,
-  #hizmetlerDetailsModal .modal-header {
-    padding: 20px;
-  }
-}
-#hizmetlerModal .modal-body,
-#hizmetlerDetailsModal .modal-body {
-  padding: 20px 50px;
-}
-@media screen and (max-width: 480px) {
-  #hizmetlerModal .modal-body,
-  #hizmetlerDetailsModal .modal-body {
-    padding: 20px;
-  }
-}
-
-.priceInfo {
-  display: flex;
-  align-items: flex-end;
-  margin-left: auto;
-}
-
-.propList .listItem .title {
-  font-size: 20px;
+.modal .modalContentWrapper .searchInputWrapper input {
+  width: calc(100% - 60px);
+  height: 58px;
+  padding-left: 36px;
+  padding-right: 36px;
+  font-size: 18px;
+  font-weight: 400;
   color: var(--text);
-  line-height: 28px;
-  font-family: "GilroySemibold";
-  box-shadow: none;
-  padding: 20px 0 20px 0;
+}
+@media screen and (max-width: 991.98px) {
+  .modal .modalContentWrapper .searchInputWrapper input {
+    width: calc(100% - 46px);
+    height: 46px;
+    font-size: 14px;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+.modal .modalContentWrapper .searchInputWrapper input::-moz-placeholder {
+  color: #cccccc;
+}
+.modal .modalContentWrapper .searchInputWrapper input::placeholder {
+  color: #cccccc;
+}
+.modal .modalContentWrapper .searchInputWrapper input::-moz-placeholder {
+  color: #cccccc;
+}
+.modal .modalContentWrapper .searchInputWrapper input::-moz-placeholder {
+  color: #cccccc;
+}
+.modal .modalContentWrapper .searchInputWrapper input::-ms-input-placeholder {
+  color: #cccccc;
+}
+.modal .modalContentWrapper .searchInputWrapper input::-webkit-input-placeholder {
+  color: #cccccc;
+}
+.modal .modalContentWrapper .searchInputWrapper .searchButton {
+  min-width: 60px;
+  width: 60px;
+  height: 60px;
+}
+@media screen and (max-width: 991.98px) {
+  .modal .modalContentWrapper .searchInputWrapper .searchButton {
+    min-width: 46px;
+    width: 46px;
+    height: 46px;
+  }
+}
+.modal .modalContentWrapper .searchInputWrapper .searchButton .icon-search {
+  font-size: 32px;
+}
+@media screen and (max-width: 991.98px) {
+  .modal .modalContentWrapper .searchInputWrapper .searchButton .icon-search {
+    font-size: 26px;
+  }
 }
 
-.ekstralarList {
-  padding-top: 10px;
-}
-.ekstralarList .listItem {
-  padding-bottom: 15px;
-  padding-top: 15px;
-  border-bottom: 1px solid var(--gray-4);
-}
-.ekstralarList .listItem .container-check .checkText {
-  font-size: 16px;
-}
-@media screen and (max-width: 991.98px) {
-  .ekstralarList .listItem .container-check .checkText {
-    font-size: 14px;
-  }
-}
-.ekstralarList .listItem .textLink {
-  margin-left: 30px;
-  margin-top: 0;
-}
-.ekstralarList .listItem .priceInfo > span {
-  font-size: 13px;
-  color: var(--gray-6);
-}
-.ekstralarList .listItem .priceInfo .countPrice {
-  color: var(--gray-6);
-}
-.ekstralarList .listItem .priceInfo .countPrice:after {
-  content: "/";
-  font-size: 14px;
-  color: var(--gray-5);
-  display: inline-block;
-  margin-left: 5px;
-  margin-right: 5px;
-}
-.ekstralarList .listItem .priceInfo .countPrice .price {
-  font-size: 16px;
-  margin-right: 5px;
-  font-family: "GilroyMedium";
-}
-@media screen and (max-width: 991.98px) {
-  .ekstralarList .listItem .priceInfo .countPrice .price {
-    font-size: 14px;
-  }
+.modal-backdrop {
+  background: rgba(0, 31, 51, 0.93);
+  --bs-backdrop-opacity: 100%;
 }
 
 .is-idle .fancybox__nav {
