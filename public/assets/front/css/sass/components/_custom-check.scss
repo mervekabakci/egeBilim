@@ -12,14 +12,12 @@
   .checkText {
     color: #747474;
     font-size: 13px;
-    font-family:'GilroyMedium';
     margin-top: 4px;
   }
   a {
     color: var(--primary);
     border-bottom: 1px solid rgba(0, 0, 0, 0);
     transition: all 0.3s linear;
-    font-family: 'GilroySemibold';
     @media screen and (min-width: 992px) {
       &:hover {
         border-color: var(--primary);
@@ -105,7 +103,6 @@
       height: 40px;
       transition: all 0.3s linear;
       cursor: pointer;
-      font-family: "GilroyMedium";
       font-size: 14px;
     }
     .form-check-input:checked[type="radio"] ~ label {
@@ -256,7 +253,6 @@
     }
     .checkText{
       color: var(--primary);
-      font-family: 'GilroySemibold';
       font-size: 14px;
     }
   }
@@ -270,7 +266,6 @@
   margin-bottom: 15px;
   font-size: 16px;
   color: var(--text-2);
-  font-family: "GilroySemibold";
   @media screen and (max-width:1600px) {
     padding: 7px 7px 7px 14px;
     font-size: 14px;

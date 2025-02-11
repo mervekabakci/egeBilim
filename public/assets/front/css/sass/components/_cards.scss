@@ -1,12 +1,10 @@
 .cards {
   &:not(.swiper-wrapper) {
     display: flex;
-    align-items: stretch;
     gap: 20px;
     flex-wrap: wrap;
 
     .card {
-      flex: 1;
       .desc {
       }
     }
@@ -114,8 +112,60 @@
       }
     }
   }
+  &.half{
+    gap:36px 30px;
+    @media screen and (max-width:1280px) {
+      gap:20px;
+    }
+    .card{
+      width: calc(50% - 20px);
+      display: flex;
+      
+      @media screen and (max-width:540px) {
+        width: 100%;
+      }
+      .card-top{
+        aspect-ratio: 4/2;
+        overflow: hidden;
+        border-radius: 19px;
+        position: relative;
 
-  &.half {
+        .card-title,
+        h2{
+          font-size: 20px;
+          line-height: 27px;
+          color: var(--white);
+          font-weight: 700;
+          @media screen and (max-width:1280px) {
+            font-size: 18px;
+            line-height: 24px;
+          }
+          @media screen and (max-width:991.98px) {
+            font-size: 16px;
+            line-height: 21px;
+          }
+        }
+
+        .card-img-overlay{
+          background:linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgb(0, 0, 0) 100%);
+          padding: 20px;
+          transition: all .3s linear;
+        }
+      }
+    }
+    a{
+      &.card{
+        @media screen and (min-width:992px) {
+          &:hover{
+            .card-img-overlay{
+              padding-bottom: 30px;
+            }
+          }
+        }
+      }
+    }
+  }
+  &.quad {
     .card {
       width: calc(25% - 15px);
       max-width: calc(25% - 15px);
@@ -151,7 +201,6 @@
         }
       }
     }
-  
   }
 
   &.thirdCards {

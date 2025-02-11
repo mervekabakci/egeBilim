@@ -1,6 +1,139 @@
 .swiper {
 }
 
+/*Timeline slider*/
+.timelineWrapper {
+  height: 340px;
+  border-radius: 19px;
+  border: 2px solid #ededed;
+  padding: 45px 22px 22px;
+  position: relative;
+  margin-bottom: 45px;
+  @media screen and (max-width:540px) {
+    height: 280px;
+  }
+  .timelineTitle {
+    font-size: 29px;
+    line-height: 37px;
+    font-weight: 700;
+    color: #262626;
+    background-color: var(--white);
+    display: inline-block;
+    width: auto;
+    padding: 0 10px;
+    top: -20px;
+    position: absolute;
+    left: 10px;
+    @media screen and (max-width:991.98px) {
+      font-size: 22px;
+      line-height: 30px;
+      top: -15px;
+    }
+    @media screen and (max-width:540px) {
+      font-size: 18px;
+      line-height: 25px;
+      top: -10px;
+    }
+  }
+
+  .swiperButtons {
+    .customSwiperButton {
+      bottom: 0;
+      z-index: 99;
+      background-color: var(--secondary);
+      color: var(--white);
+      top: auto;
+      box-shadow: none;
+      &.swiper-button-disabled {
+        opacity: 1;
+        background-color: var(--gray);
+      }
+      &.prevButton {
+        left: 0;
+      }
+      &.nextButton {
+        right: 0;
+      }
+    }
+  }
+}
+.timelineSlider {
+  height: 100%;
+  width: 100%;
+  .swiper-wrapper {
+    height: calc(100% - 60px);
+  }
+  .swiper-slide {
+    .info {
+      position: relative;
+      padding-top: 30px;
+      padding-right: 26px;
+      .year {
+        font-size: 29px;
+        line-height: 36px;
+        font-weight: 700;
+        color: #262626;
+        @media screen and (max-width:991.98px) {
+          font-size: 22px;
+          line-height: 30px;
+        }
+        @media screen and (max-width:540px) {
+          font-size: 18px;
+          line-height: 25px;
+        }
+      }
+      .desc {
+        font-size: 17px;
+        line-height: 22px;
+        font-weight: 400;
+        color: #262626;
+        @media screen and (max-width:991.98px) {
+          font-size: 16px;
+          line-height: 25px;
+        }
+        @media screen and (max-width:540px) {
+          font-size: 14px;
+          line-height: 21px;
+        }
+      }
+
+      &:before {
+        content: "";
+        width: 24px;
+        height: 24px;
+        background-color: var(--secondary);
+        position: absolute;
+        top: 0;
+        border-radius: 100%;
+        z-index: 2;
+      }
+      &:after {
+        content: "";
+        position: absolute;
+        top: 7px;
+        left: 10px;
+        border-top: 11px dotted #cecece;
+        width: calc(100% - 17px);
+        transition: all 1s ease-in-out;
+      }
+    }
+    &.visible{
+      .info{
+        &:after{
+          border-top-color: var(--secondary);
+        }
+      }
+    }
+    &:last-child {
+      .info {
+        &:after {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
 .swiperButtons {
   .customSwiperButton {
     width: 52px;
@@ -10,32 +143,32 @@
     font-size: 20px;
     color: #bdbdbd;
     box-shadow: 0 8px 9px rgba(0, 0, 0, 0.2);
-    transition: all .3s linear;
-    @media screen and (max-width:1280px) {
-        width: 45px;
-        height: 45px;
+    transition: all 0.3s linear;
+    @media screen and (max-width: 1280px) {
+      width: 45px;
+      height: 45px;
     }
     &:after {
       display: none;
     }
-    &.prevButton{
-        left: -20px;
-        @media screen and (max-width:1280px) {
-            left: 20px;
-        }
+    &.prevButton {
+      left: -20px;
+      @media screen and (max-width: 1280px) {
+        left: 20px;
+      }
     }
-    &.nextButton{
-        right: -20px;
-        @media screen and (max-width:1280px) {
-            right: 20px;
-        }
-        .icon-arrow-middle-left{
-            position: relative;
-            transform: rotate(180deg);
-        }
+    &.nextButton {
+      right: -20px;
+      @media screen and (max-width: 1280px) {
+        right: 20px;
+      }
+      .icon-arrow-middle-left {
+        position: relative;
+        transform: rotate(180deg);
+      }
     }
-    &.swiper-button-disabled{
-        opacity: 70%;
+    &.swiper-button-disabled {
+      opacity: 70%;
     }
     @media screen and (min-width: 992px) {
       &:hover {
@@ -44,4 +177,17 @@
       }
     }
   }
+}
+
+/*Swiper scroll*/
+.swiper-horizontal > .swiper-scrollbar,
+.swiper-scrollbar.swiper-scrollbar-horizontal {
+  opacity: 1 !important;
+  top: auto;
+  bottom: 15px;
+  height: 16px;
+  background-color: #eaeaea;
+}
+.swiper-scrollbar-drag {
+  background-color: var(--secondary);
 }

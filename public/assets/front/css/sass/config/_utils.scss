@@ -335,71 +335,6 @@ a:hover {
         }
       }
     }
-    &.bold {
-      font-family: "GilroySemibold";
-    }
-    &.type2 {
-      border-color: var(--primary);
-      color: var(--primary);
-      @media screen and (min-width: 992px) {
-        &:hover {
-          color: var(--white);
-        }
-      }
-    }
-
-    &.type3 {
-      border-color: var(--white);
-      color: var(--white);
-      &:after {
-        background-color: var(--white);
-      }
-      @media screen and (min-width: 992px) {
-        &:hover {
-          color: var(--primary);
-        }
-      }
-    }
-
-    // &.disabled {
-    //   border-color: var(--gray-2) !important;
-    //   background-color: var(--gray-2) !important;
-    //   color: var(--gray-5) !important;
-    //   pointer-events: none;
-
-    //   &:after {
-    //     display: none;
-    //   }
-    //   input {
-    //     color: var(--gray-5) !important;
-    //   }
-    //   &:before {
-    //     content: "";
-    //     width: 100%;
-    //     height: 100%;
-    //     top: 0;
-    //     left: 0;
-    //     z-index: 9;
-    //     position: absolute;
-    //   }
-    // }
-  }
-  &.button-outline-2 {
-    color: var(--gray-6);
-    border: 1px solid #cbc8c8;
-    background-color: rgba(0, 0, 0, 0);
-    font-family: "GilroyMedium";
-    font-size: 16px;
-    &:after {
-      display: none;
-    }
-
-    @media screen and (min-width: 992px) {
-      &:hover {
-        color: var(--primary);
-        border-color: var(--primary);
-      }
-    }
   }
   &.moreButton {
     height: 60px;
@@ -445,40 +380,7 @@ a:hover {
     }
   }
 }
-.notLinkButton {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background-color: currentColor;
-  color: var(--white);
-  font-family: "GilroyMedium";
-  font-weight: 500;
-  font-size: 15px;
-  height: 45px;
-  border-radius: 10px;
-  padding: 0 20px;
-  transition: all 0.3s linear;
-  position: relative;
-  z-index: 1;
-  overflow: hidden;
-  min-width: 95px;
-  white-space: nowrap;
-  gap: 10px;
 
-  @media screen and (max-width: 1440px) {
-    height: 50px;
-    font-size: 14px;
-  }
-
-  @media screen and (max-width: 991.98px) {
-    height: 45px;
-    font-size: 13px;
-  }
-  &.primaryButton {
-    background-color: #d9043e !important;
-    border: 1px solid #d9043e !important;
-  }
-}
 .textLink {
   color: var(--primary);
   position: relative;
@@ -497,25 +399,6 @@ a:hover {
       color: var(--primary);
     }
   }
-
-  // &:after {
-  //   content: "";
-  //   border-bottom: 1px solid var(--primary);
-  //   width: 100%;
-  //   height: 1px;
-  //   left: 0;
-  //   bottom: 0;
-  //   position: absolute;
-  //   transition: all 0.3s linear;
-  // }
-  // .icon-arrow-long {
-  //   font-size: 30px;
-  // }
-  // &.noAfter {
-  //   &:after {
-  //     display: none;
-  //   }
-  // }
 
   @media screen and (min-width: 992px) {
     &:hover {
@@ -581,93 +464,4 @@ a:hover {
     outline: 0;
     /* Chrome, Safari, Edge ve Opera için */
   }
-}
-
-
-.formSelectWrapper {
-  .customSelect {
-    width: 100%;
-    height: 50px;
-    border: 1px solid #bfbfbf;
-    border-radius: 10px;
-    overflow: hidden;
-    @media screen and (max-width: 1600px) {
-      height: 45px;
-    }
-    .current {
-      display: flex;
-      align-items: center;
-      height: 50px;
-      @media screen and (max-width: 1600px) {
-        height: initial;
-        font-size: 12px;
-      }
-    }
-    &:after {
-      border: none;
-    }
-
-    &:focus {
-      outline: 0 !important;
-      box-shadow: none !important;
-    }
-    &.open {
-      overflow: visible;
-      .list {
-        width: 100%;
-        max-height: 150px;
-        overflow-y: auto;
-        border-radius: 10px;
-        box-shadow: 0 3px 20px -7px rgba(0, 0, 0, 1);
-        border: 1px solid var(--gray-5);
-      }
-    }
-    &.type2 {
-      &:after {
-        border-bottom: 2px solid #999;
-        border-right: 2px solid #999;
-        width: 8px;
-        height: 8px;
-      }
-
-      .current {
-        font-family: "GilroySemibold";
-        color: var(--gray-7);
-        font-size: 16px;
-      }
-
-      .option {
-        font-family: "GilroyMedium";
-        color: var(--gray-7);
-        font-size: 16px;
-
-        &.focus {
-          color: var(--primary);
-        }
-        &.selected {
-          &.focus {
-          }
-        }
-      }
-    }
-
-    &.eventsFilterSelect {
-      &.open {
-        .list {
-          max-height: initial;
-        }
-      }
-    }
-  }
-}
-
-.overlay {
-  position: fixed;
-  background-color: rgba(0, 0, 0, 0.8);
-  width: 100vw;
-  height: 100vh;
-  top: 0;
-  left: 0;
-  display: none;
-  z-index: 999;
 }

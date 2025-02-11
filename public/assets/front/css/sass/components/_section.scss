@@ -173,6 +173,9 @@
           border-radius: 31px 31px 0 0;
           overflow: hidden;
           height: 100%;
+          @media screen and (min-width:992px) {
+            width: calc(25% - 15px);
+          }
           a {
             height: 100%;
             display: flex;
