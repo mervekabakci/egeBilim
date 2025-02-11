@@ -53,4 +53,9 @@
         }
     }
   }
+  &.fullWidth{
+    .bannerContainer{
+      padding-left: 0;
+    }
+  }
 }

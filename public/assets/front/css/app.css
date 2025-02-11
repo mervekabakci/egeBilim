@@ -1633,6 +1633,25 @@ video {
   /* Chrome, Safari, Edge ve Opera için */
 }
 
+.topImgBg {
+  position: absolute;
+  width: 100%;
+  top: 250px;
+  left: 0;
+  right: 0;
+  z-index: -1;
+}
+@media screen and (max-width: 1440px) {
+  .topImgBg {
+    top: 150px;
+  }
+}
+@media screen and (max-width: 991.98px) {
+  .topImgBg {
+    top: 200px;
+  }
+}
+
 .preloader {
   position: fixed;
   top: 0;
@@ -3404,115 +3423,93 @@ footer .footer .footerBottom .copyRight b {
 .schoolContent .rightColumn .imageWrapper {
   width: calc(100% + 216px);
 }
-.accCategoryTitle {
-  font-size: 24px;
-  color: var(--primary);
-  line-height: 34px;
-  padding-top: 30px;
-  padding-bottom: 10px;
-  padding-left: 16px;
-}
-
-.customAcc .accordion-item {
-  margin-bottom: 20px;
-  background-color: rgba(0, 0, 0, 0);
-}
-.customAcc .accordion-item .accordion-button {
-  background-color: rgba(0, 0, 0, 0);
-  border: none;
-  font-size: 17px;
-  color: var(--gray-7);
-  line-height: 25px;
-  box-shadow: none;
-  padding-left: 0;
-  overflow: hidden;
-  align-items: flex-start;
+.customAcc {
+  padding-top: 70px;
 }
 @media screen and (max-width: 991.98px) {
-  .customAcc .accordion-item .accordion-button {
-    font-size: 15px;
-    line-height: 22px;
+  .customAcc {
+    padding-top: 50px;
   }
 }
-.customAcc .accordion-item .accordion-button:after {
-  content: "\e903";
-  transform: rotate(90deg);
-  font-family: "customFont";
-  background-image: none;
-  margin-top: 4px;
-  transform-origin: center;
+@media screen and (max-width: 480px) {
+  .customAcc {
+    padding-top: 30px;
+  }
+}
+.customAcc .accordion .accordion-item {
+  margin-bottom: 20px;
+}
+.customAcc .accordion .accordion-item .accordion-header .accordion-button {
+  background-color: #dfdfdf;
+  border: none;
+  box-shadow: none;
+  transition: all 0.3s linear;
+  line-height: 42px;
+  font-size: 21.5px;
+  color: var(--white);
+  font-weight: 700;
+  min-height: 60px;
+  border-radius: 5px;
+}
+@media screen and (max-width: 991.98px) {
+  .customAcc .accordion .accordion-item .accordion-header .accordion-button {
+    font-size: 16px;
+    min-height: 45px;
+  }
+}
+.customAcc .accordion .accordion-item .accordion-header .accordion-button:after {
+  font-weight: 800;
+  content: "+";
+  background: none;
+  background-color: #bebebe;
+  width: 32px;
+  height: 32px;
+  border-radius: 5px;
   display: flex;
-  width: 15px;
   align-items: center;
   justify-content: center;
+  font-size: 19px;
+  transition: all 0.3s linear;
 }
-.customAcc .accordion-item .accordion-button:focus {
-  border: none;
-  box-shadow: none;
+.customAcc .accordion .accordion-item .accordion-header .accordion-button:not(.collapsed) {
+  background-color: var(--primary);
 }
-.customAcc .accordion-item .accordion-button:not(.collapsed) {
-  color: var(--primary);
+.customAcc .accordion .accordion-item .accordion-header .accordion-button:not(.collapsed):after {
+  background-color: #e45a3a;
 }
-.customAcc .accordion-item .accordion-button:not(.collapsed):focus {
-  box-shadow: none;
-}
-.customAcc .accordion-item .accordion-button:not(.collapsed):after {
-  transform: rotate(270deg);
-}
-@media screen and (max-width: 991.98px) {
-  .customAcc .accordion-item:last-child {
-    border-bottom: var(--bs-accordion-border-width) solid var(--bs-accordion-border-color);
+@media screen and (min-width: 992px) {
+  .customAcc .accordion .accordion-item .accordion-header .accordion-button:hover {
+    background-color: var(--primary);
   }
 }
-.customAcc .accordion-item .accordion-body {
-  font-size: 16px;
+.customAcc .accordion .accordion-item .accordion-body {
+  padding: 16px 0;
+  font-size: 17px;
   line-height: 25px;
-  color: var(--gray-6);
-  padding-top: 0;
-  padding-bottom: 30px;
-  padding-left: 0;
+  font-weight: 400;
 }
-@media screen and (max-width: 991.98px) {
-  .customAcc .accordion-item .accordion-body {
-    padding-left: 0;
-    font-size: 14px;
-  }
+.customAcc .accordion .accordion-item .accordion-body b {
+  font-weight: 700;
 }
-.customAcc .accordion-item .accordion-body a {
+.customAcc .accordion .accordion-item .accordion-body a {
+  font-weight: 700;
   color: var(--primary);
   position: relative;
 }
-.customAcc .accordion-item .accordion-body a:after {
+.customAcc .accordion .accordion-item .accordion-body a:before {
   content: "";
   border-bottom: 1px dotted var(--primary);
-  position: absolute;
-  left: 0;
-  bottom: -2px;
   width: 100%;
+  height: 1px;
+  position: absolute;
+  bottom: -2px;
+  left: 0;
   transition: all 0.3s linear;
 }
 @media screen and (min-width: 992px) {
-  .customAcc .accordion-item .accordion-body a:hover:after {
+  .customAcc .accordion .accordion-item .accordion-body a:hover:after {
     width: 0;
   }
-}
-.customAcc .accordion-item .accordion-body b {
-  color: var(--primary);
-}
-.customAcc .accordion-item .accordion-body code {
-  color: var(--primary);
-}
-.customAcc.type2 .accordion-item .accordion-button {
-  padding-left: 15px;
-  background-color: rgba(0, 0, 0, 0);
-}
-.customAcc.type2 .accordion-item .accordion-body {
-  padding-left: 15px;
-}
-
-.pageContent .customAcc .accordion-item .accordion-button {
-  padding-left: 0;
-  padding-right: 0;
 }
 
 .modal .btn-close {
@@ -3941,6 +3938,7 @@ footer .footer .footerBottom .copyRight b {
 
 .section {
   position: relative;
+  z-index: 1;
   /*kayıt section*/
   /*Ege Bilim Okulları Mezun Profili*/
   /*Sosyal Medya section*/
@@ -3957,13 +3955,11 @@ footer .footer .footerBottom .copyRight b {
   font-size: 44px;
   line-height: 50px;
   color: var(--fifth);
-  font-weight: 700;
+  font-weight: 400;
   position: relative;
   z-index: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   gap: 7px;
+  text-align: center;
 }
 @media screen and (max-width: 991.98px) {
   .section .sectionHead .sectionTitle {
@@ -3971,6 +3967,13 @@ footer .footer .footerBottom .copyRight b {
     line-height: 32px;
     display: block;
   }
+}
+.section .sectionHead .sectionTitle b {
+  font-weight: 700;
+}
+.section .sectionHead .sectionTitle strong {
+  font-weight: 700;
+  display: block;
 }
 .section .sectionHead .sectionTitle .backTitle {
   position: absolute;
@@ -4016,6 +4019,29 @@ footer .footer .footerBottom .copyRight b {
 }
 .section .sectionHead.type2 .sectionTitle b {
   font-weight: 800;
+}
+.section .sectionHead.type3 .sectionTitle {
+  font-size: 55px;
+  line-height: 56px;
+  letter-spacing: -0.25px;
+}
+@media screen and (max-width: 1440px) {
+  .section .sectionHead.type3 .sectionTitle {
+    font-size: 42px;
+    line-height: 52px;
+  }
+}
+@media screen and (max-width: 1280px) {
+  .section .sectionHead.type3 .sectionTitle {
+    font-size: 28px;
+    line-height: 34px;
+  }
+}
+@media screen and (max-width: 991.98px) {
+  .section .sectionHead.type3 .sectionTitle {
+    font-size: 24px;
+    line-height: 32px;
+  }
 }
 .section .sectionHead.beetween {
   display: flex;
@@ -4844,7 +4870,7 @@ footer .footer .footerBottom .copyRight b {
 }
 @media screen and (max-width: 991.98px) {
   .cards.quad .card {
-    width: calc(50% - 15px);
+    width: calc(50% - 10px);
     max-width: initial;
     flex: none;
   }
@@ -4900,6 +4926,156 @@ footer .footer .footerBottom .copyRight b {
   .cards.thirdCards a.card:hover .card-body .card-title {
     color: var(--primary);
   }
+}
+
+.ratesWrapper {
+  position: relative;
+  z-index: 1;
+  padding: 60px 102px 0;
+}
+@media screen and (max-width: 991.98px) {
+  .ratesWrapper {
+    padding: 20px 0;
+  }
+}
+.ratesWrapper .backImages {
+  position: absolute;
+  width: 100%;
+  top: -90px;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  display: flex;
+  align-items: flex-end;
+  padding-right: 20px;
+}
+@media screen and (max-width: 991.98px) {
+  .ratesWrapper .backImages {
+    display: none;
+  }
+}
+.ratesWrapper .backImages .rightImg {
+  position: relative;
+  top: -45px;
+}
+.ratesWrapper .frontImagesLeft,
+.ratesWrapper .frontImagesLeftRight {
+  position: absolute;
+  bottom: 0;
+  z-index: 1;
+}
+@media screen and (max-width: 991.98px) {
+  .ratesWrapper .frontImagesLeft,
+  .ratesWrapper .frontImagesLeftRight {
+    display: none;
+  }
+}
+.ratesWrapper .frontImagesLeft {
+  left: -61px;
+}
+.ratesWrapper .frontImagesLeftRight {
+  right: -40px;
+}
+.ratesWrapper .cards {
+  gap: 20px;
+}
+@media screen and (max-width: 480px) {
+  .ratesWrapper .cards {
+    gap: 30px;
+  }
+}
+.ratesWrapper .cards .card {
+  background-color: var(--primary);
+  height: 215px;
+  align-items: center;
+  text-align: center;
+  padding: 50px 20px 20px;
+  border-radius: 21px;
+}
+@media screen and (max-width: 1440px) {
+  .ratesWrapper .cards .card {
+    padding-top: 35px;
+  }
+}
+@media screen and (max-width: 1280px) {
+  .ratesWrapper .cards .card {
+    padding-top: 30px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .ratesWrapper .cards .card {
+    height: 150px;
+  }
+}
+.ratesWrapper .cards .card:nth-child(even) {
+  background-color: var(--secondary);
+}
+.ratesWrapper .cards .card .icon {
+  position: absolute;
+  top: -60px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 120px;
+}
+@media screen and (max-width: 1440px) {
+  .ratesWrapper .cards .card .icon {
+    width: 75px;
+    top: -30px;
+  }
+}
+@media screen and (max-width: 1280px) {
+  .ratesWrapper .cards .card .icon {
+    width: 50px;
+    top: -15px;
+  }
+}
+.ratesWrapper .cards .card .icon img {
+  width: 100%;
+}
+.ratesWrapper .cards .card .icon > span {
+  font-size: 80px;
+}
+.ratesWrapper .cards .card .counter {
+  font-size: 67px;
+  line-height: 75px;
+  color: var(--white);
+  font-weight: 800;
+}
+@media screen and (max-width: 1440px) {
+  .ratesWrapper .cards .card .counter {
+    font-size: 40px;
+    line-height: 50px;
+  }
+}
+@media screen and (max-width: 1280px) {
+  .ratesWrapper .cards .card .counter {
+    font-size: 30px;
+    line-height: 40px;
+  }
+}
+.ratesWrapper .cards .card .text {
+  font-size: 19.5px;
+  line-height: 25px;
+  color: var(--white);
+  letter-spacing: -0.25px;
+  font-weight: 400;
+}
+@media screen and (max-width: 1280px) {
+  .ratesWrapper .cards .card .text {
+    font-size: 16px;
+    line-height: 22px;
+  }
+}
+.ratesWrapper .cards .card .text strong {
+  font-weight: 800;
+  display: block;
+}
+.ratesWrapper .cards .card .text b {
+  font-weight: 800;
+}
+.ratesWrapper .cards .card.last {
+  padding-right: 40px;
 }
 
 .bannerWrapper {
@@ -4974,7 +5150,16 @@ footer .footer .footerBottom .copyRight b {
     line-height: 30px;
   }
 }
+.bannerWrapper.fullWidth .bannerContainer {
+  padding-left: 0;
+}
 
+.pageContentWrapper {
+  position: relative;
+}
+.pageContentWrapper .sectionHead {
+  padding-top: 45px;
+}
 .pageContentWrapper .twiceColumn {
   display: flex;
   align-items: flex-start;
@@ -5068,6 +5253,76 @@ footer .footer .footerBottom .copyRight b {
     width: 100%;
     padding-left: 0;
   }
+}
+@media screen and (max-width: 640px) {
+  .table-responsive {
+    position: relative;
+    padding-top: 40px;
+  }
+  .table-responsive:after {
+    content: "";
+    position: absolute;
+    top: 13px;
+    left: 15px;
+    width: 24px;
+    height: 24px;
+    background-size: 24px;
+    background-image: url("../../images/statics/icons/hand.svg");
+    animation: leftoright 1s ease-in-out infinite;
+  }
+}
+
+@keyframes leftoright {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(10px, 0);
+  }
+}
+.table {
+  min-width: 600px;
+}
+.table th {
+  background-color: var(--secondary);
+  height: 60px;
+  font-size: 20px;
+  color: var(--white);
+  font-weight: 700;
+  vertical-align: middle;
+  border-bottom: none;
+}
+.table th:first-child {
+  padding-left: 30px;
+  border-radius: 5px 0 0 5px;
+}
+.table th:last-child {
+  border-radius: 0 5px 5px 0;
+}
+.table tr td {
+  height: 60px;
+  vertical-align: middle;
+  border: none;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 36px;
+  border-bottom: none;
+  color: #161616;
+  padding-left: 20px;
+  padding-right: 20px;
+  white-space: nowrap;
+}
+.table tr td .customIcon {
+  color: #c5c5c5;
+  display: inline-block;
+  margin-right: 20px;
+}
+.table tr td:first-child {
+  border-radius: 5px 0 0 5px;
+  padding-left: 30px;
+}
+.table tr td:last-child {
+  border-radius: 0 5px 5px 0;
 }
 #app {
   min-height: 100vh;

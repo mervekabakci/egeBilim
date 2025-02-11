@@ -1,4 +1,9 @@
 .pageContentWrapper {
+  position: relative;
+
+  .sectionHead{
+    padding-top: 45px;
+  }
   .twiceColumn {
     display: flex;
     align-items: flex-start;

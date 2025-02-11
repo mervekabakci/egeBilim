@@ -1,127 +1,89 @@
-.accCategoryTitle{
-  font-size: 24px;
-  color: var(--primary);
-  line-height: 34px;
-  padding-top: 30px;
-  padding-bottom: 10px;
-  padding-left: 16px;
-}
 .customAcc {
-  .accordion-item {
-    margin-bottom: 20px;
-    background-color: rgba(0, 0, 0, 0);
-    .accordion-button {
-      background-color: rgba(0, 0, 0, 0);
-      border: none;
-      font-size: 17px;
-      color: var(--gray-7);
-      // color: var(--primary);
-      line-height: 25px;
-      box-shadow: none;
-      padding-left: 0;
-      overflow: hidden;
-      align-items: flex-start;
-      @media screen and (max-width: 991.98px) {
-        font-size: 15px;
-        line-height: 22px;
-      }
-      &:after {
-        content: "\e903";
-        transform: rotate(90deg);
-        font-family: "customFont";
-        background-image: none;
-        margin-top: 4px;
-        transform-origin: center;
-        display: flex;
-        width: 15px;
-        align-items: center;
-        justify-content: center;
-      }
-      &:focus {
-        border: none;
-        box-shadow: none;
-      }
-      &:not(.collapsed) {
-        color: var(--primary);
-        // color: var(--gray-7);
-        &:focus {
+  padding-top: 70px;
+  @media screen and (max-width: 991.98px) {
+    padding-top: 50px;
+  }
+  @media screen and (max-width: 480px) {
+    padding-top: 30px;
+  }
+  .accordion {
+    .accordion-item {
+      margin-bottom: 20px;
+      .accordion-header {
+        .accordion-button {
+          background-color: #dfdfdf;
+          border: none;
           box-shadow: none;
-        }
-        &:after {
-          transform: rotate(270deg);
-        }
-      }
-      // &.collapsed {
-      //   background-color: rgba(0, 0, 0, 0.03);
-      // }
-    }
-    &:last-child {
-      @media screen and (max-width: 991.98px) {
-        border-bottom: var(--bs-accordion-border-width) solid
-          var(--bs-accordion-border-color);
-      }
-    }
-    .accordion-body {
-      font-size: 16px;
-      line-height: 25px;
-      color: var(--gray-6);
-      padding-top: 0;
-      padding-bottom: 30px;
-      padding-left: 0;
-      @media screen and (max-width: 991.98px) {
-        padding-left: 0;
-        font-size: 14px;
-      }
-
-      a {
-        color: var(--primary);
-        position: relative;
-        &:after {
-          content: "";
-          border-bottom: 1px dotted var(--primary);
-          position: absolute;
-          left: 0;
-          bottom: -2px;
-          width: 100%;
           transition: all 0.3s linear;
-        }
-        @media screen and (min-width: 992px) {
-          &:hover {
+          line-height: 42px;
+          font-size: 21.5px;
+          color: var(--white);
+          font-weight: 700;
+          min-height: 60px;
+          border-radius: 5px;
+          @media screen and (max-width: 991.98px) {
+            font-size: 16px;
+            min-height: 45px;
+          }
+
+          &:after {
+            font-weight: 800;
+            content: "+";
+            background: none;
+            background-color: #bebebe;
+            width: 32px;
+            height: 32px;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 19px;
+            transition: all 0.3s linear;
+          }
+          &:not(.collapsed) {
+            background-color: var(--primary);
             &:after {
-              width: 0;
+              background-color: #e45a3a;
+            }
+          }
+          @media screen and (min-width: 992px) {
+            &:hover {
+              background-color: var(--primary);
             }
           }
         }
       }
-      b {
-        color: var(--primary);
-      }
-      code {
-        color: var(--primary);
-      }
-    }
-  }
 
-  &.type2 {
-    .accordion-item {
-      .accordion-button {
-        padding-left: 15px;
-        background-color: rgba(0, 0, 0, 0);
-
-      }
       .accordion-body {
-        padding-left: 15px;
-      }
-    }
-  }
-}
-
-.pageContent {
-  .customAcc {
-    .accordion-item {
-      .accordion-button {
-        padding-left: 0;
-        padding-right: 0;
+        padding: 16px 0;
+        font-size: 17px;
+        line-height: 25px;
+        font-weight: 400;
+        b {
+          font-weight: 700;
+        }
+        a {
+          font-weight: 700;
+          color: var(--primary);
+          position: relative;
+          &:before {
+            content: "";
+            border-bottom: 1px dotted var(--primary);
+            width: 100%;
+            height: 1px;
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            transition: all 0.3s linear;
+          }
+          @media screen and (min-width: 992px) {
+            &:hover {
+              &:after {
+                width: 0;
+              }
+            }
+          }
+        }
       }
     }
   }
