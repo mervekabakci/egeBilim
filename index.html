@@ -48,13 +48,13 @@
 
     <title>EGE BİLİM OKULLARI</title>
     
-    <link href="public/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" >
-    <link rel="stylesheet" href="public/assets/plugins/aos/aos.css">
+    <link href="public/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" > <!--Bootstra-->
+    <link rel="stylesheet" href="public/assets/plugins/aos/aos.css"><!--Sayfa scrollunda gelen animate icin initial css-->
     
-    <link rel="stylesheet" href="public/assets/plugins/swiper/swiper-bundle.min.css">
-    <link rel="stylesheet" href="public/assets/plugins/fancyapps/fancybox.css">
+    <link rel="stylesheet" href="public/assets/plugins/swiper/swiper-bundle.min.css"><!--swiper slider initial css-->
+    <link rel="stylesheet" href="public/assets/plugins/fancyapps/fancybox.css"><!--Fancybox initial css-->
 
-    <link rel="stylesheet" href="public/assets/front/css/app.css">
+    <link rel="stylesheet" href="public/assets/front/css/app.css"> <!--pluginler harıcı tum css kodları-->
 </head>
 
 <body>
@@ -842,7 +842,7 @@
                         </div>
                     </div>
                     <div class="sectionContent">
-                        <div class="cards half">
+                        <div class="cards quad">
                             <div class="card" data-aos="flip-left" data-aos-delay="100">
                                 <a class="card-top" href="public/assets/images/media/sosyalmedya/01.jpg" data-fancybox="socialGallery">
                                     <div class="imageWrapper">
@@ -971,41 +971,42 @@
           
         </footer>
     </div>
-    <div class="modal fade type2" id="UyeGirisiModal" aria-hidden="true" aria-labelledby="UyeGirisiModal" tabindex="-1">
+
+    <!--Arama Modalı bootstrap modal kullanıldı. arama ıslemlerınde bootstrap modal show, hide fonkyionlarını kullanmak gerekebılır.-->
+    <div class="modal fade" id="searchModal" data-bs-backdrop="static" aria-hidden="true" aria-labelledby="searchModalLabel" tabindex="-1">
         <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
           <div class="modal-content">
-            <div class="modal-header">
-              <a href="#" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></a>
-            </div>
+            <a href="#" class="btn-close" data-bs-dismiss="modal" aria-label="Close">KAPAT X</a>
             <div class="modal-body">
-                <div class="modalHead">
-                    <div class="titleColumn">
-                        <div class="modal-title text-primary mb-0" id="UyeOlModalLabel">Üye Girişi</div>
+                <div class="modalContentWrapper">
+                    <p>Aramış Olduğunuz Konu İle İlgili Bize İpucu Verin...</p>
+                    <div class="searchInputWrapper">
+                        <input type="text" placeholder="Örneğin; İlkokul eğitimleri hakkında bilgi." id="searchInput">
+                        <a href="#" class="searchButton fixBtn button-secondary"><span class="icon-search"></span></a>
                     </div>
                 </div>
-               
-                
             </div>
           </div>
         </div>
     </div>
 
 
-    <script src="public/assets/plugins/jquery.min.js"></script>
-    <script src="public/assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="public/assets/plugins/swiper/swiper-bundle.min.js"></script>
-    <script src="public/assets/plugins/aos/aos.js"></script>
-    <script src="public/assets/plugins/fancyapps/fancybox.umd.js"></script>
+    <script src="public/assets/plugins/jquery.min.js"></script><!--jquery-->
+    <script src="public/assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script><!--Bootstrap-->
+    <script src="public/assets/plugins/aos/aos.js"></script><!--site ilk yuklendıgınde scroll yaptıgımızda gelen anımasyonlar ıcın kullanılıyor-->
+    <script src="public/assets/plugins/swiper/swiper-bundle.min.js"></script><!--Swiper slider initial-->
+    <script src="public/assets/plugins/fancyapps/fancybox.umd.js"></script><!--Fancybox initial-->
 
 
-    <script src="public/assets/front/js/app.js"></script>
-    <script src="public/assets/front/js/swiper-custom.js"></script><!--Eger slider kullanılmayan bır sayfa ise bunu kullanmaya gerek yok-->
+    <script src="public/assets/front/js/app.js"></script><!--pluginler haric site geneli script kodları-->
+    <script src="public/assets/front/js/swiper-custom.js"></script><!--swiper initiliaze kodları ıcın kullanılıyor. Eger slider kullanılmayan bır sayfa ise bunu kullanmaya gerek yok-->
  
     <script>
         
+        /*Bu kod sadece anasayfada kullanıldıgı ıcın buraya eklendı.*/
         $(document).ready(function () {
             $(".nextSectionButton").on("click", function (e) {
-                e.preventDefault(); // Linkin varsayılan davranışını engeller
+                e.preventDefault(); 
 
                 let $nextSection = $(this).closest(".section").next(".section");
                 

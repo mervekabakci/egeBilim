@@ -1,0 +1,82 @@
+.pageContentWrapper {
+  .twiceColumn {
+    display: flex;
+    align-items: flex-start;
+    @media screen and (max-width: 991.98px) {
+      flex-direction: column;
+      padding-top: 20px;
+    }
+    .leftColumn {
+      width: 310px;
+      background-color: var(--gray);
+      position: relative;
+      border-radius: 0 0 15px 15px;
+      padding-bottom: 100px;
+      @media screen and (max-width: 991.98px) {
+        width: 100%;
+        padding-bottom: 0;
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        border-radius: 15px;
+      }
+      @media screen and (max-width: 540px) {
+        flex-direction: column;
+        padding: 20px 16px 40px;
+        gap: 10px;
+      }
+      .pageFigure {
+        width: calc(100% + 140px);
+        left: -50px;
+        top: -75px;
+        position: relative;
+        @media screen and (max-width: 991.98px) {
+          position: relative;
+          left: 0;
+          top: 0;
+          width: 200px;
+        }
+        @media screen and (max-width: 540px) {
+          width: 100%;
+          max-width: 300px;
+        }
+      }
+      .infoContent {
+        width: calc(100% - 50px);
+        margin: 0 auto;
+        font-size: 20px;
+        line-height: 27px;
+        color: #262626;
+        font-weight: 400;
+        margin-top: -75px;
+        padding-bottom: 75px;
+        @media screen and (max-width: 991.98px) {
+          margin-top: 0;
+          width: calc(100% - 250px);
+          padding: 30px 0;
+          font-size: 14px;
+          line-height: 21px;
+        }
+        @media screen and (max-width: 540px) {
+          padding: 0;
+          width: 100%;
+          text-align: center;
+        }
+        b {
+          font-weight: 700;
+        }
+      }
+    }
+    .rightColumn {
+      width: calc(100% - 310px);
+      padding-left: 130px;
+      padding-top: 60px;
+      @media screen and (max-width: 991.98px) {
+        width: 100%;
+        padding-left: 0;
+      }
+      @media screen and (max-width: 540px) {
+      }
+    }
+  }
+}
