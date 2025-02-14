@@ -25,7 +25,9 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
+.icon-arrow-alt-circle-up:before {
+  content: "\e924";
+}
 .icon-chevron:before {
   content: "\e923";
 }
@@ -85,11 +87,14 @@
 .icon-heart:before {
   content: "\e90f";
 }
-.icon-instagram-outline:before {
+.icon-instagram-color:before {
   content: "\e911";
 }
-.icon-journal-alt:before {
+.icon-instagram-outline:before {
   content: "\e912";
+}
+.icon-journal-alt:before {
+  content: "\e922";
 }
 .icon-marker:before {
   content: "\e913";
@@ -144,7 +149,6 @@
 .icon-youtube:before {
   content: "\e921";
 }
-
 
 .icon-facebook{
   font-size: 22px;
