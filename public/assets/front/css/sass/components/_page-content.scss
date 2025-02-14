@@ -3,6 +3,9 @@
 
   .sectionHead{
     padding-top: 45px;
+    @media screen and (max-width:991.98px) {
+      padding-top: 30px;
+    }
   }
 
   .contentHead{
