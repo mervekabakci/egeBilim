@@ -4,6 +4,34 @@
   .sectionHead{
     padding-top: 45px;
   }
+
+  .contentHead{
+    padding-bottom: 10px;
+    .contentTitle{
+      font-size: 36px;
+      line-height: 42px;
+      color: var(--primary);
+      font-weight: 400;
+      margin-bottom: 20px;
+      @media screen and (max-width:991.98px) {
+        font-size: 22px;
+        line-height: 30px;
+      }
+      b{
+        font-weight: 700;
+      }
+    }
+    p{
+      font-size: 16px;
+      line-height: 24px;
+      color: #191919;
+      font-weight: 400;
+
+      b{
+        font-weight: 700;
+      }
+    }
+  }
   .twiceColumn {
     display: flex;
     align-items: flex-start;
@@ -45,6 +73,21 @@
           width: 100%;
           max-width: 300px;
         }
+        &.type2{
+          width: calc(100% + 170px);
+          left: -84px;
+          top: -140px;
+          @media screen and (max-width: 991.98px) {
+            position: relative;
+            left: 0;
+            top: 0;
+            width: 200px;
+          }
+          @media screen and (max-width: 540px) {
+            width: 100%;
+            max-width: 300px;
+          }
+        }
       }
       .infoContent {
         width: calc(100% - 50px);
@@ -70,6 +113,84 @@
         b {
           font-weight: 700;
         }
+
+        .caption{
+          color: var(--third);
+          font-size: 28px;
+          line-height: 35px;
+          font-weight: 700;
+          @media screen and (max-width:1440px) {
+            font-size: 24px;
+            line-height: 32px;
+          }
+          @media screen and (max-width:1366px) {
+            font-size: 20px;
+            line-height: 27px;
+          }
+          @media screen and (max-width:1280px) {
+            font-size: 18px;
+            line-height: 25px;
+          }
+          @media screen and (max-width:991.98px) {
+            font-size: 16px;
+            line-height: 22px;
+            text-align: left;
+          }
+        }
+        ul{
+          padding-top: 15px;
+          li{
+            position: relative;
+            padding-left: 35px;
+            font-size: 17px;
+            line-height: 25px;
+            color: #262626;
+            font-weight: 400;
+            @media screen and (max-width:1280px) {
+              font-size: 15px;
+              line-height: 22px;
+            }
+            @media screen and (max-width:991.98px) {
+              font-size: 14px;
+              line-height: 21px;
+              padding-top: 5px;
+              padding-bottom: 5px;
+              text-align: left;
+            }
+            b{
+              font-weight: 700;
+            }
+            &:before{
+              content: "\e905";
+              font-family: 'customFont';
+              font-size: 27px;
+              color: var(--third);
+              position: absolute;
+              left: 0;
+              top: -2px;
+              @media screen and (max-width:991.98px) {
+               top: 4px;
+              }
+            }
+          }
+        }
+
+        &.type2{
+          margin-top: -160px;
+          padding-bottom:20px;
+          @media screen and (max-width: 991.98px) {
+            margin-top: 0;
+            width: calc(100% - 250px);
+            padding: 30px 0;
+            font-size: 14px;
+            line-height: 21px;
+          }
+          @media screen and (max-width: 540px) {
+            padding: 0;
+            width: 100%;
+            text-align: center;
+          }
+        }
       }
     }
     .rightColumn {
@@ -79,9 +200,19 @@
       @media screen and (max-width: 991.98px) {
         width: 100%;
         padding-left: 0;
+        padding-top: 20px;
       }
       @media screen and (max-width: 540px) {
       }
     }
+  }
+}
+
+
+/*İletişim*/
+.contactWrapper{
+  padding-top: 55px;
+  @media screen and (max-width:991.98px) {
+    padding-top: 0;
   }
 }

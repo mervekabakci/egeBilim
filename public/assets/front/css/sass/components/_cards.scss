@@ -11,6 +11,50 @@
   }
   .card {
     border: none;
+
+    &.halfBgTop {
+      padding: 10px 10px 0;
+      border: 2px solid #f4f4f4;
+      border-top: none;
+      border-bottom: none;
+      border-radius: 0;
+      &:before {
+        content: "";
+        width: calc(100% + 4px);
+        height: 184px;
+        background-color: #f4f4f4;
+        position: absolute;
+        top: 0;
+        left: -2px;
+        right: 0;
+        border-bottom: 10px solid var(--white);
+        @media screen and (max-width:480px) {
+          height: 120px;
+        }
+      }
+    }
+    .card-top {
+      position: relative;
+    }
+    .card-body {
+      .buttonWrapper {
+        display: flex;
+        align-items: stretch;
+        height: 80px;
+        padding-top: 10px;
+
+        .shareWrapper {
+          width: 50%;
+          border-right: 2px solid #cccccc;
+          @media screen and (max-width:480px) {
+            border-width: 1px;
+          }
+        }
+        .downloadWrapper {
+          width: 50%;
+        }
+      }
+    }
     .card-img-overlay {
       background: rgb(255, 255, 255);
       background: linear-gradient(
@@ -23,7 +67,10 @@
       align-items: center;
       justify-content: flex-end;
       transition: all 0.3s ease-in-out;
-      padding: 0;
+      padding-top: 0;
+      padding-bottom: 10px;
+      padding-left: 10px;
+      padding-right: 10px;
 
       .captionBack {
         position: relative;
@@ -63,6 +110,32 @@
             font-size: 16px;
             line-height: 24px;
           }
+        }
+      }
+
+      .logo {
+        width: 35px;
+      }
+      .tag {
+        font-size: 13px;
+        color: var(--white);
+        line-height: 14px;
+        font-weight: 400;
+        text-transform: uppercase;
+        text-align: center;
+        @media screen and (max-width:1280px) {
+          font-size: 12px;
+        }
+      }
+      .card-title {
+        font-size: 17px;
+        line-height: 23px;
+        font-weight: 700;
+        color: var(--white);
+        text-align: center;
+        @media screen and (max-width:1280px) {
+          font-size: 14px;
+          line-height: 21px;
         }
       }
 
@@ -169,6 +242,29 @@
       }
     }
   }
+  &.third {
+    gap:50px 30px;
+    @media screen and (max-width:480px) {
+     gap: 30px 15px;
+    }
+    .card {
+      width: calc(33.3% - 20px);
+      @media screen and (max-width:1280px) {
+        width: calc(50% - 15px);
+      }
+      @media screen and (max-width:480px) {
+        // width: 100%;
+      }
+      .card-body{
+        padding: 0;
+      }
+      .card-top {
+        position: relative;
+        aspect-ratio: 3 / 4;
+        overflow: hidden;
+      }
+    }
+  }
   &.quad {
     .card {
       width: calc(25% - 15px);
@@ -185,6 +281,7 @@
         aspect-ratio: 3 / 3.1;
         border-radius: 25px;
         overflow: hidden;
+        position: relative;
         .imageWrapper {
           border: 1px solid #f2f2f2;
 
@@ -213,6 +310,7 @@
         aspect-ratio: 4/2;
         border-radius: 25px;
         overflow: hidden;
+        position: relative;
         img {
           transition: all 0.3s linear;
         }
@@ -255,7 +353,7 @@
   position: relative;
   z-index: 1;
   padding: 60px 102px 0;
-  @media screen and (max-width:991.98px) {
+  @media screen and (max-width: 991.98px) {
     padding: 20px 0;
   }
   .backImages {
@@ -268,7 +366,7 @@
     display: flex;
     align-items: flex-end;
     padding-right: 20px;
-    @media screen and (max-width:991.98px) {
+    @media screen and (max-width: 991.98px) {
       display: none;
     }
     .rightImg {
@@ -281,7 +379,7 @@
     position: absolute;
     bottom: 0;
     z-index: 1;
-    @media screen and (max-width:991.98px) {
+    @media screen and (max-width: 991.98px) {
       display: none;
     }
   }
@@ -293,7 +391,7 @@
   }
   .cards {
     gap: 20px;
-    @media screen and (max-width:480px) {
+    @media screen and (max-width: 480px) {
       gap: 30px;
     }
     .card {
@@ -309,7 +407,7 @@
       @media screen and (max-width: 1280px) {
         padding-top: 30px;
       }
-      @media screen and (max-width:480px) {
+      @media screen and (max-width: 480px) {
         height: 150px;
       }
       &:nth-child(even) {
@@ -346,7 +444,7 @@
           font-size: 40px;
           line-height: 50px;
         }
-        @media screen and (max-width:1280px) {
+        @media screen and (max-width: 1280px) {
           font-size: 30px;
           line-height: 40px;
         }
@@ -357,9 +455,9 @@
         color: var(--white);
         letter-spacing: -0.25px;
         font-weight: 400;
-        @media screen and (max-width:1280px) {
+        @media screen and (max-width: 1280px) {
           font-size: 16px;
-          line-height:22px;
+          line-height: 22px;
         }
         strong {
           font-weight: 800;
@@ -372,6 +470,121 @@
       &.last {
         padding-right: 40px;
       }
+    }
+  }
+}
+
+.downloadWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  .text {
+    font-size: 14px;
+    color: #cccccc;
+    font-weight: 600;
+    line-height: 16px;
+    @media screen and (max-width:480px) {
+      font-size: 12px;
+    }
+  }
+  .icon-download {
+  }
+  a {
+    font-size: 26px;
+    color: #cccccc;
+    transition: all 0.3s linear;
+    @media screen and (min-width: 992px) {
+      &:hover {
+        color: var(--fifth);
+      }
+    }
+  }
+}
+.shareWrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  .text {
+    font-size: 14px;
+    color: #cccccc;
+    font-weight: 600;
+    line-height: 16px;
+    @media screen and (max-width:480px) {
+      font-size: 12px;
+    }
+  }
+  .shareButtonIcon {
+    color: #cccccc;
+    transition: all 0.3s linear;
+    font-size: 26px;
+    cursor: pointer;
+    @media screen and (min-width: 992px) {
+      &:hover {
+        color: var(--fifth);
+      }
+    }
+  }
+  .shareButtonWrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-direction: column;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 1);
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 1px 9px rgba(0, 0, 0, 0.2);
+    left: -50%;
+    bottom: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s linear;
+    .shareButton {
+      width: 30px;
+      height: 30px;
+      background-color: var(--fifth);
+      border: 1px solid var(--fifth);
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      border-radius: 100%;
+      transition: all 0.3s linear;
+      @media screen and (min-width: 992px) {
+        &:hover {
+          background-color: var(--white);
+          color: var(--fifth);
+          transform: scale(1.05);
+        }
+      }
+
+      .icon-linkedin {
+        font-size: 18px;
+      }
+      .icon-whatsapp {
+        font-size: 18px;
+      }
+      .icon-twitter {
+        font-size: 12px;
+      }
+      .icon-facebook {
+        font-size: 16px;
+      }
+    }
+
+    &.active {
+      left: 50%;
+      transform: translateX(-50%);
+      opacity: 1;
+      visibility: visible;
     }
   }
 }

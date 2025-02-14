@@ -53,6 +53,7 @@
     
     <link rel="stylesheet" href="public/assets/plugins/swiper/swiper-bundle.min.css"><!--swiper slider initial css-->
     <link rel="stylesheet" href="public/assets/plugins/fancyapps/fancybox.css"><!--Fancybox initial css-->
+    <link rel="stylesheet" href="public/assets/plugins/sweetalert/sweetalert2.css"><!--datepicker initial css-->
 
     <link rel="stylesheet" href="public/assets/front/css/app.css"> <!--pluginler harıcı tum css kodları-->
 </head>
@@ -180,19 +181,19 @@
             <section class="section pageSection firstSection">
 
                 <!--iç sayfa bannerları ıcın genel kullanım-->
-                <div class="bannerWrapper">
+                <div class="bannerWrapper fullWidth">
                     <div class="container-xxl h-100">
                         <div class="bannerContainer">
                             <div class="desc">
                                 <!--burda pageTitle classı ile div,h1 olarak kullanılabılır veya dırek class olmadan h1 de kullanılabılecek sekılde ayarlandı-->
-                                <h1 class="pageTitle">Atatürk Köşesi</h1>
+                                <h1 class="pageTitle">İletişim</h1>
                             </div>
                             <!--Standart sayfa breadcrumb-->
                             <div class="breadCrumbWrapper">
                                 <nav aria-label="breadcrumb">
                                     <ol class="breadcrumb">
                                         <li class="breadcrumb-item"><a href="#">Anasayfa</a></li>
-                                        <li class="breadcrumb-item active" aria-current="page">Atatürk Köşesi</li>
+                                        <li class="breadcrumb-item active" aria-current="page">İletişim</li>
                                     </ol>
                                 </nav>
                             </div>
@@ -203,144 +204,123 @@
                 <!--iç sayfa ıcerıklerı ıcın genel kullanım-->
                 <div class="pageContentWrapper">
                     <div class="container-xxl">
-                        <div class="twiceColumn">
-                            <div class="leftColumn">
-                                <div class="pageFigure">
-                                    <figure>
-                                        <img src="public/assets/images/statics/ataturk-wave.png" alt="">
-                                    </figure>
-                                </div>
-                                <div class="infoContent">
-                                    <b>"Gençler,</b>
-                                    <br><br>
-                                    Cesaretimizi güçlendiren ve sürdüren sizlersiniz.
-                                    <br><br>
-                                    Siz, almakta olduğunuz terbiye ve  kültür ile, insanlık değerinin, vatan  sevgisinin en değerli örneği olacaksınız."
-                                    <br><br>
-                                    <img width="190px" class="img-fluid" src="public/assets/images/statics/ataturk-imza.svg" alt="">
-                                </div>
-                            </div>
-                            <div class="rightColumn">
-                                <div class="timelineWrapper">
-                                    <div class="timelineTitle">Atatürk'ün Kronolojisi</div>
-                                    <div class="swiper timelineSlider">
-                                        <div class="swiper-wrapper">
-                                            <div class="swiper-slide">
-                                                <div class="info">
-                                                    <div class="year">1881</div>
+                        <div class="contactWrapper">
+                            <div class="row">
+                                <div class="col-lg-6 pe-xl-5 pe-lg-4">
+                                    <div class="contactInfo pe-xl-5">
+                                        <div class="boxes ps-4 ps-lg-0">
+                                            <div class="boxItem">
+                                                <div class="boxIcon type2 bg-white text-primary"><span class="icon-envelope customIcon"></span></div>
+                                                <div class="boxTitle type2">
+                                                    Bize E-Posta İle Ulaşın
+                                                </div>
+                                                
+                                                <div class="boxContent">
                                                     <div class="desc">
-                                                        Mustafa Kemal Atatürk Selanik’te doğdu.
+                                                        <a href="mailto:bilgi@egebilimokullari.k12.tr">bilgi@egebilimokullari.k12.tr</a> adresine 7 gün 24 saat e-posta gönderebilirsiniz. 
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="swiper-slide">
-                                                <div class="info">
-                                                    <div class="year">1893</div>
+                                            <div class="boxItem">
+                                                <div class="boxIcon type2 bg-white text-primary"><span class="icon-phone-retro-2 customIcon"><span class="path1"></span><span class="path2"></span><span class="path3"></span></span></div>
+                                                <div class="boxTitle type2">
+                                                    Bizi Arayın
+                                                </div>
+                                                <div class="boxContent">
                                                     <div class="desc">
-                                                        Mustafa Selanik’teki Askeri Hazırlık Okuluna başlar ve burada öğretmeni tarafından kendisine ikinci ismi "Kemal" verilir.
+                                                        Haftaiçi <b>09:00 - 18:00</b> saatleri arasında <a href="tel:+90-216-452-64-54">(+90) 216 452 6 454</a> numaralı telefondan bize ulaşabilirsiniz.
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="swiper-slide">
-                                                <div class="info">
-                                                    <div class="year">1895</div>
-                                                    <div class="desc">
-                                                        Mustafa Kemal Manastırdaki Askeri Liseye başlar.
+                                            <div class="boxItem type2">
+                                                <div class="boxIcon type2 bg-white text-primary"><span class="icon-marker customIcon"></span></div>
+                                                <div class="boxTitle type2">
+                                                    Bizi Ziyaret Edin!
+                                                </div>
+                                                <div class="boxContent">
+                                                    <div class="desc type2">
+                                                        <div class="adress">
+                                                            <span>Cumhuriyet Mahallesi Yakacık No: 6 Kartal/İstanbul</span>
+                                                        </div>
+                                                        <a class="adressMapLink" href="https://maps.app.goo.gl/hGG6NivwsTK72TXu9" target="_blank">
+                                                            <img src="public/assets/images/statics/icons/google.png" alt="">
+                                                            <span>KONUMA GİT</span>
+                                                        </a>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="swiper-slide">
-                                                <div class="info">
-                                                    <div class="year">1899</div>
-                                                    <div class="desc">
-                                                        Mustafa Kemal İstanbul’da Harbiye’nin hazırlık sınıfına başlar.
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="swiper-slide">
-                                                <div class="info">
-                                                    <div class="year">1881</div>
-                                                    <div class="desc">
-                                                        Mustafa Kemal Atatürk Selanik’te doğdu.
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="swiper-slide">
-                                                <div class="info">
-                                                    <div class="year">1893</div>
-                                                    <div class="desc">
-                                                        Mustafa Selanik’teki Askeri Hazırlık Okuluna başlar ve burada öğretmeni tarafından kendisine ikinci ismi "Kemal" verilir.
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="swiper-slide">
-                                                <div class="info">
-                                                    <div class="year">1895</div>
-                                                    <div class="desc">
-                                                        Mustafa Kemal Manastırdaki Askeri Liseye başlar.
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="swiper-slide">
-                                                <div class="info">
-                                                    <div class="year">1899</div>
-                                                    <div class="desc">
-                                                        Mustafa Kemal İstanbul’da Harbiye’nin hazırlık sınıfına başlar.
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="swiper-scrollbar"></div>
-                                        <div class="swiperButtons">
-                                            <div class="swiper-button-prev customSwiperButton prevButton timeline-prev"><span class="icon-arrow-middle-left"></span></div>
-                                            <div class="swiper-button-next customSwiperButton nextButton timeline-next"><span class="icon-arrow-middle-left"></span></div>
                                         </div>
                                     </div>
                                 </div>
-
-                                <div class="cards half">
-                                    <a href="#" class="card">
-                                        <div class="card-top">
-                                            <div class="imageWrapper">
-                                                <img src="public/assets/images/media/ataturk/01.jpg" alt="">
-                                            </div>
-                                            <div class="card-img-overlay">
-                                                <div class="card-title">Atatürk İlkeleri</div>
+                                <div class="col-lg-6 ps-xl-5 ps-lg-4">
+                                    <div class="contactForm ps-xl-5">
+                                        <div class="boxes ps-4 ps-lg-0">
+                                            <div class="boxItem">
+                                                <div class="boxIcon type2 bg-white text-primary"><span class="icon-journal-alt customIcon"></span></div>
+                                                <div class="boxTitle type2">
+                                                    Bize Yazın
+                                                </div>
+                                                <div class="boxText">Sizlere daha iyi hizmet verebilmemiz için <b>Soru, Görüş</b> ve <b>Önerilerinizi</b> bize yazın.</div>
+                                                <div class="boxContent">
+                                                    <form class="form needs-validation" action="" novalidate>
+                                                        <div class="row">
+                                                            <div class="col-12 position-relative">
+                                                                <label for="name" class="form-label">Adınız Soyadınız</label>
+                                                                <div class="inputColumn mb-4">
+                                                                    <div class="inputIcon"><span class="icon-user"></span></div>
+                                                                    <input type="text" class="form-control textMask" id="name" placeholder="Adı Soyadı" required>
+                                                                    <div class="invalid-tooltip">
+                                                                        Lütfen Adınzı Soyadınızı Giriniz
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-12 position-relative">
+                                                                <label for="email" class="form-label">Kişi E-Posta Adresi</label>
+                                                                <div class="inputColumn mb-3">
+                                                                    <div class="inputIcon"><span class="icon-envelope"></span></div>
+                                                                    <input type="email" class="form-control" id="email" placeholder="E-Posta Adresi" required>
+                                                                    <div class="invalid-tooltip">
+                                                                        Lütfen E-Posta Adresinizi Giriniz
+                                                                    </div>
+                                                                    <div class="invalid-tooltip-format">
+                                                                        Lütfen test@test.com formatında yazınız
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-12 position-relative">
+                                                                <label for="phone" class="form-label">Kişi Telefon Numarası</label>
+                                                                <div class="inputColumn mb-4">
+                                                                    <div class="inputIcon text">+90</div>
+                                                                    <input type="text" class="form-control phoneMask" id="phone" placeholder="(___) ___ __ __" required>
+                                                                    <div class="invalid-tooltip">
+                                                                        Lütfen Telefon Numaranızı Giriniz
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-12 position-relative">
+                                                                <label for="name" class="form-label">Mesajınız</label>
+                                                                <textarea name="message" id="" cols="30" rows="10" required></textarea>
+                                                                <div class="invalid-tooltip">
+                                                                    Lütfen Mesajınızı Giriniz
+                                                                </div>
+                                                            </div>
+                                                            
+                                                            <div class="col-xl-6 position-relative d-flex ms-auto ">
+                                                                <span class="fixBtn button-third formSendButton mt-4">
+                                                                    <input type="submit" value="BAŞVURU GÖNDER" />
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                    
+                    
+                                                            
+                                                    
+                                                    </form>
+                                                </div>
                                             </div>
                                         </div>
-                                    </a>
-                                    <a href="#" class="card">
-                                        <div class="card-top">
-                                            <div class="imageWrapper">
-                                                <img src="public/assets/images/media/ataturk/02.jpg" alt="">
-                                            </div>
-                                            <div class="card-img-overlay">
-                                                <div class="card-title">Atatürk'ün Devrimleri</div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                    <a href="#" class="card">
-                                        <div class="card-top">
-                                            <div class="imageWrapper">
-                                                <img src="public/assets/images/media/ataturk/03.jpg" alt="">
-                                            </div>
-                                            <div class="card-img-overlay">
-                                                <div class="card-title">Gençliğe Hitabe</div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                    <a href="#" class="card">
-                                        <div class="card-top">
-                                            <div class="imageWrapper">
-                                                <img src="public/assets/images/media/ataturk/04.jpg" alt="">
-                                            </div>
-                                            <div class="card-img-overlay">
-                                                <div class="card-title">10. Yıl Nutku</div>
-                                            </div>
-                                        </div>
-                                    </a>
+                                    </div>
                                 </div>
-
                             </div>
                         </div>
                     </div>
@@ -470,75 +450,18 @@
     <script src="public/assets/plugins/aos/aos.js"></script><!--site ilk yuklendıgınde scroll yaptıgımızda gelen anımasyonlar ıcın kullanılıyor-->
     <script src="public/assets/plugins/swiper/swiper-bundle.min.js"></script><!--Swiper slider initial-->
     <script src="public/assets/plugins/fancyapps/fancybox.umd.js"></script><!--Fancybox initial-->
+    <script src="public/assets/plugins/jquery.mask.min.js"></script><!--input mask ıcın kullanılır-->
+    <script src="public/assets/plugins/sweetalert/sweetalert2.js"></script><!--input mask ıcın kullanılır-->
+
+
+    <script src="public/assets/plugins/sharer.min.js"></script><!--sosyal medya paylasım ıcın kullanılır sadece bu sayfada eklendi.-->
 
 
     <script src="public/assets/front/js/app.js"></script><!--pluginler haric site geneli script kodları-->
     <script src="public/assets/front/js/swiper-custom.js"></script><!--swiper initiliaze kodları ıcın kullanılıyor. Eger slider kullanılmayan bır sayfa ise bunu kullanmaya gerek yok-->
+    <script src="public/assets/front/js/form.js"></script><!--swiper initiliaze kodları ıcın kullanılıyor. Eger slider kullanılmayan bır sayfa ise bunu kullanmaya gerek yok-->
     
-
-<script>
-
-    /*timeline swiper slider icin kullanılan kod sadace bu sayfaya ozeldir baska sayfalarda kullanılmadıgından buraya yazılmıstır******** BAŞLANGIÇ*/
-
-    var timelineSlider = new Swiper(".timelineSlider", {
-        slidesPerView: 1,
-        spaceBetween: 0,
-        scrollbar: {
-            el: ".swiper-scrollbar",
-            hide: true,
-        },
-        navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-        },
-        breakpoints:{
-            480: {
-                slidesPerView: 2,
-                spaceBetween: 0,
-            },
-            640: {
-                slidesPerView: 3,
-                spaceBetween: 0,
-            },
-            992: {
-                slidesPerView: 2,
-                spaceBetween: 0,
-            },
-            1280: {
-                slidesPerView: 3,
-                spaceBetween: 0,
-            },
-            1400: {
-                slidesPerView: 4,
-                spaceBetween: 0,
-            },
-        },
-        on: {
-            init: function () {
-            updateVisibleSlides(this);
-            },
-            slideChange: function () {
-            updateVisibleSlides(this);
-            },
-        },
-    });
-
-    function updateVisibleSlides(swiper) {
-        // Tüm slide'lardan visible class'ını kaldırmak ıcın kullanılır
-        swiper.slides.forEach((slide) => {
-            slide.classList.remove("visible");
-        });
-
-     // Görünür olan slide'lara visible class'ını eklemek ıcın kullanılır
-        for (let i = swiper.activeIndex; i < swiper.activeIndex + swiper.params.slidesPerView; i++) {
-            if (swiper.slides[i]) {
-            swiper.slides[i].classList.add("visible");
-            }
-        }
-    }
-    /*timeline swiper slider icin kullanılan kod sadace bu sayfaya ozeldir baska sayfalarda kullanılmadıgından buraya yazılmıstır  ****  BİTİŞ*/
-
-</script>
+  
 </body>
 
 </html>

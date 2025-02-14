@@ -9,20 +9,6 @@ $(window).on("load", function () {
   }
 });
 
-/*Scrooll page fixed header */
-// let lastScrollY = window.scrollY;
-
-// document.addEventListener("scroll", function () {
-//   var header = document.getElementById("header");
-
-//   // Header için sticky sınıfı ekleme
-//   if (window.scrollY > 0) {
-//     header.classList.add("fixed");
-//   } else {
-//     header.classList.remove("fixed");
-//   }
-// });
-
 //Animasyonlar icin aos init kullaniliyor
 AOS.init({
   offset: 50,
@@ -89,6 +75,27 @@ function scrollToActiveTab($wrapper, $activeTab = null) {
   // Scroll işlemini gerçekleştir
   $wrapper.animate({ scrollLeft: scrollAmount }, 300);
 }
+
+/**paylasım iconları kutuphane sayfasında kullanılıyor */
+$(".shareWrapper .shareButtonIcon").on("click", function (e) {
+  e.stopPropagation();
+  if ($(this).hasClass("active")) {
+    $(this).removeClass("active");
+    $(this).next(".shareButtonWrapper").removeClass("active");
+  } else {
+    $(this).addClass("active");
+    $(this).next(".shareButtonWrapper").addClass("active");
+  }
+});
+
+
+$(document).on("click", function (e) {
+  if (!$(e.target).closest(".shareWrapper").length) {
+    $(".shareWrapper .shareButtonIcon").removeClass("active");
+    $(".shareWrapper .shareButtonWrapper").removeClass("active");
+  }
+});
+
 
 if (typeof Fancybox !== "undefined") {
   Fancybox.bind("[data-fancybox]", {
