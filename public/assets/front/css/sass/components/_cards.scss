@@ -54,6 +54,33 @@
           width: 50%;
         }
       }
+
+      .name{
+        font-size: 25px;
+        line-height: 32px;
+        color: var(--fifth);
+        font-weight: 800;
+        text-align: center;
+        padding-right: 7px;
+        @media screen and (max-width:991.98px) {
+          font-size: 18px;
+          line-height: 25px;
+        }
+      }
+      .job{
+        font-size: 15px;
+        color: #878787;
+        opacity: 0.43;
+        text-transform: uppercase;
+        font-weight: 800;
+        line-height: 22px;
+        text-align: center;
+        padding-right: 7px;
+        @media screen and (max-width:991.98px) {
+          font-size: 13px;
+          line-height: 20px;
+        }
+      } 
     }
     .card-img-overlay {
       background: rgb(255, 255, 255);
@@ -168,6 +195,60 @@
               margin-top: 15px;
             }
           }
+        }
+      }
+    }
+    .card-img-top{
+      position: relative;
+      height: 355px;
+      overflow: hidden;
+      padding-right: 7px;
+      .emailButton{
+        position: absolute !important;
+        min-width: 52px;
+        height: 52px;
+        color: var(--white)!important;
+        top:56px;
+        right: 0;
+        font-size: 22px;
+        &:before{
+          display: none;
+        }
+        @media screen and (min-width:992px) {
+          &:hover{
+            background-color: white!important;
+            &.button-primary{
+              color: var(--primary)!important;
+            }
+            &.button-secondary{
+              color: var(--secondary)!important;
+            }
+          }
+        }
+      }
+      img{
+        width: auto;
+      }
+      .photoBg{
+        position: absolute;
+        bottom: 0;
+        width: calc(100% - 7px);
+        height: calc(100% - 65px);
+        border-radius: 16px;
+        overflow: hidden;
+        &:before{
+          content: "";
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          background-image: url("../../images/statics/homeBg.png");
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+          opacity: 0.06;
         }
       }
     }

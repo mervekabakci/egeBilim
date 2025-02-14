@@ -4534,6 +4534,72 @@ footer .footer .footerBottom .copyRight b {
     color: var(--fifth);
   }
 }
+.section .ataturkDesc {
+  position: relative;
+  min-height: 190px;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  border-radius: 16px;
+  will-change: transform;
+  overflow: hidden;
+  box-shadow: 10px 10px 54px 14px rgba(0, 0, 0, 0.11);
+  padding-right: 80px;
+  margin-top: 45px;
+}
+@media screen and (max-width: 991.98px) {
+  .section .ataturkDesc {
+    margin-top: 30px;
+    padding: 30px 20px;
+  }
+}
+.section .ataturkDesc .ataturkBg {
+  position: absolute;
+  left: 0;
+  top: -2.343vw;
+  bottom: 0;
+  z-index: -1;
+  width: 42.39vw;
+  opacity: 23%;
+  height: auto;
+  height: 25.31vw;
+  min-width: 648px;
+  min-height: 387px;
+}
+@media screen and (max-width: 480px) {
+  .section .ataturkDesc .ataturkBg {
+    left: -50%;
+  }
+}
+.section .ataturkDesc .desc {
+  max-width: 54%;
+  text-align: end;
+}
+@media screen and (max-width: 991.98px) {
+  .section .ataturkDesc .desc {
+    max-width: initial;
+    text-align: center;
+  }
+}
+.section .ataturkDesc .desc p {
+  text-align: center;
+  font-size: 19px;
+  line-height: 27px;
+  color: #000000;
+}
+@media screen and (min-width: 992px) {
+  .section .ataturkDesc .desc p {
+    font-size: 14px;
+    line-height: 22px;
+  }
+}
+.section .ataturkDesc .desc p b {
+  font-weight: 800;
+}
+.section .ataturkDesc .desc img {
+  margin-top: 10px;
+}
 .section .sectionContainer {
   position: relative;
 }
@@ -5200,6 +5266,36 @@ footer .footer .footerBottom .copyRight b {
 .cards .card .card-body .buttonWrapper .downloadWrapper {
   width: 50%;
 }
+.cards .card .card-body .name {
+  font-size: 25px;
+  line-height: 32px;
+  color: var(--fifth);
+  font-weight: 800;
+  text-align: center;
+  padding-right: 7px;
+}
+@media screen and (max-width: 991.98px) {
+  .cards .card .card-body .name {
+    font-size: 18px;
+    line-height: 25px;
+  }
+}
+.cards .card .card-body .job {
+  font-size: 15px;
+  color: #878787;
+  opacity: 0.43;
+  text-transform: uppercase;
+  font-weight: 800;
+  line-height: 22px;
+  text-align: center;
+  padding-right: 7px;
+}
+@media screen and (max-width: 991.98px) {
+  .cards .card .card-body .job {
+    font-size: 13px;
+    line-height: 20px;
+  }
+}
 .cards .card .card-img-overlay {
   background: rgb(255, 255, 255);
   background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgb(0, 36, 70) 115%);
@@ -5323,6 +5419,60 @@ footer .footer .footerBottom .copyRight b {
   .cards .card .card-img-overlay.anadolul .caption .front {
     margin-top: 15px;
   }
+}
+.cards .card .card-img-top {
+  position: relative;
+  height: 355px;
+  overflow: hidden;
+  padding-right: 7px;
+}
+.cards .card .card-img-top .emailButton {
+  position: absolute !important;
+  min-width: 52px;
+  height: 52px;
+  color: var(--white) !important;
+  top: 56px;
+  right: 0;
+  font-size: 22px;
+}
+.cards .card .card-img-top .emailButton:before {
+  display: none;
+}
+@media screen and (min-width: 992px) {
+  .cards .card .card-img-top .emailButton:hover {
+    background-color: white !important;
+  }
+  .cards .card .card-img-top .emailButton:hover.button-primary {
+    color: var(--primary) !important;
+  }
+  .cards .card .card-img-top .emailButton:hover.button-secondary {
+    color: var(--secondary) !important;
+  }
+}
+.cards .card .card-img-top img {
+  width: auto;
+}
+.cards .card .card-img-top .photoBg {
+  position: absolute;
+  bottom: 0;
+  width: calc(100% - 7px);
+  height: calc(100% - 65px);
+  border-radius: 16px;
+  overflow: hidden;
+}
+.cards .card .card-img-top .photoBg:before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-image: url("../../images/statics/homeBg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.06;
 }
 @media screen and (min-width: 992px) {
   .cards .card a:hover .card-img-overlay {
@@ -5820,6 +5970,11 @@ footer .footer .footerBottom .copyRight b {
 }
 .pageContentWrapper .sectionHead {
   padding-top: 45px;
+}
+@media screen and (max-width: 991.98px) {
+  .pageContentWrapper .sectionHead {
+    padding-top: 30px;
+  }
 }
 .pageContentWrapper .contentHead {
   padding-bottom: 10px;
