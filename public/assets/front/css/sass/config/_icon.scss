@@ -25,6 +25,16 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+.icon-notepad:before {
+  content: "\e925";
+}
+.icon-robot:before {
+  content: "\e926";
+}
+.icon-person-search:before {
+  content: "\e927";
+}
 .icon-arrow-alt-circle-up:before {
   content: "\e924";
 }
