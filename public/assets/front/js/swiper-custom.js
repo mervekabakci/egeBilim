@@ -1,10 +1,13 @@
-/*anasayfa okula cardları mobılde slide a cevrılıyor */
 let schoolMobilSlider;
 
 const initSchoolMobilSlider = () => {
   const schoolMobilSlideCard = document.querySelector(".schoolMobilSlideCard");
-  const cards = document.querySelector(".schoolMobilSlideCard .cards");
-  const cardItems = document.querySelectorAll(".schoolMobilSlideCard .card");
+  
+  // Eğer .schoolMobilSlideCard sayfada yoksa fonksiyonu durdur
+  if (!schoolMobilSlideCard) return;
+
+  const cards = schoolMobilSlideCard.querySelector(".cards");
+  const cardItems = schoolMobilSlideCard.querySelectorAll(".card");
 
   if (window.innerWidth < 992 && !schoolMobilSlider) {
     // Swiper classlarını ekle
@@ -53,6 +56,9 @@ const thirdSlide = document.querySelectorAll(".thisSlideWrapper");
 thirdSlide.forEach((wrapperElement) => {
   const sliderElement = wrapperElement.querySelector(".thirdSlide");
 
+  // Eğer thirdSlide yoksa hata almamak için işlemi durdur
+  if (!sliderElement) return;
+
   new Swiper(sliderElement, {
     slidesPerView: 1,
     spaceBetween: 25,
@@ -74,6 +80,5 @@ thirdSlide.forEach((wrapperElement) => {
         spaceBetween: 10,
       },
     },
-
   });
 });

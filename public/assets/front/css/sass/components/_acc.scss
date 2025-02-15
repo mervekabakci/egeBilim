@@ -9,6 +9,7 @@
   .accordion {
     .accordion-item {
       margin-bottom: 20px;
+      border-bottom: none;
       .accordion-header {
         .accordion-button {
           background-color: #dfdfdf;
@@ -21,9 +22,11 @@
           font-weight: 700;
           min-height: 60px;
           border-radius: 5px;
+
           @media screen and (max-width: 991.98px) {
             font-size: 16px;
             min-height: 45px;
+            line-height: 22px;
           }
 
           &:after {
@@ -80,6 +83,180 @@
             &:hover {
               &:after {
                 width: 0;
+              }
+            }
+          }
+        }
+
+        .accordionContent {
+          padding: 10px 25px 35px 25px;
+        }
+
+        .paragraph {
+          font-size: 16px;
+          line-height: 23px;
+          color: #262626;
+          font-weight: 400;
+          @media screen and (max-width: 991.98px) {
+            font-size: 14px;
+            line-height: 21px;
+          }
+          span,
+          h2 {
+            font-size: 22px;
+            line-height: 30px;
+            margin-top: 30px;
+            margin-bottom: 10px;
+            color: var(--primary);
+            font-weight: 700;
+            display: block;
+            @media screen and (max-width: 991.98px) {
+              font-size: 18px;
+              line-height: 25px;
+              margin-top: 15px;
+              margin-bottom: 5px;
+            }
+            &:first-child {
+              margin-top: 0;
+            }
+          }
+          h3 {
+            font-size: 18px;
+            line-height: 25px;
+            color: var(--third);
+            margin-top: 15px;
+            margin-bottom: 5px;
+            font-weight: 700;
+            @media screen and (max-width: 991.98px) {
+              font-size: 16px;
+              line-height: 23px;
+              margin-top: 5px;
+              margin-bottom: 3px;
+            }
+          }
+          a {
+            font-weight: 700;
+            color: var(--primary);
+            &:before {
+              bottom: -1px;
+            }
+            @media screen and (min-width: 992px) {
+              &:hover {
+                &:before {
+                  width: 0;
+                }
+              }
+            }
+          }
+          strong {
+            font-weight: 700;
+            display: block;
+          }
+          b {
+            font-weight: 700;
+          }
+          ol,
+          ul {
+            padding-left: 20px;
+            margin-top: 15px;
+            margin-bottom: 30px;
+            li {
+              padding-left: 10px;
+              padding-top: 5px;
+              padding-bottom: 5px;
+              &::marker {
+                color: var(--third);
+                font-weight: 700;
+                font-size: 16px;
+              }
+            }
+          }
+          ol {
+            list-style-type: decimal;
+            li {
+              &::marker {
+                font-size: 18px;
+              }
+            }
+          }
+          ul {
+            list-style-type: disc;
+            li {
+              padding-left: 0;
+            }
+          }
+        }
+      }
+    }
+    &.outline {
+      .accordion-item {
+        .accordion-header {
+          .accordion-button {
+            gap: 12px;
+            background-color: var(--white);
+            border: 2px solid #e6e6e6;
+            color: #262626;
+            .icon-question-square {
+              color: var(--secondary);
+            }
+            .customIcon {
+              font-size: 24px;
+              &.type2{
+                color: var(--secondary);
+              }
+            }
+            .imgIcon {
+              max-width: 24px;
+            }
+            &:not(.collapsed) {
+              background-color: var(--secondary);
+              color: var(--white);
+              border-color: var(--secondary);
+              .icon-question-square {
+                color: var(--white);
+              }
+              .customIcon {
+                &.type2{
+                  color: var(--white);
+                }
+              }
+              &:after {
+                background-color: #e68b35;
+              }
+            }
+            @media screen and (min-width: 992px) {
+              &:hover {
+                background-color: var(--secondary);
+                color: var(--white);
+                border-color: var(--secondary);
+                .icon-question-square {
+                  color: var(--white);
+                }
+                &:after {
+                  background-color: #e68b35;
+                }
+                .customIcon {
+                  &.type2{
+                    color: var(--white);
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    &.type2 {
+      .accordion-item {
+        .accordion-header {
+          .accordion-button {
+            color: #474747;
+            &:not(.collapsed) {
+              color: var(--white);
+            }
+            &:hover {
+              @media screen and (min-width: 992px) {
+                color: var(--white);
               }
             }
           }

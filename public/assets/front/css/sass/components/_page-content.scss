@@ -1,36 +1,36 @@
 .pageContentWrapper {
   position: relative;
 
-  .sectionHead{
+  .sectionHead {
     padding-top: 45px;
-    @media screen and (max-width:991.98px) {
+    @media screen and (max-width: 991.98px) {
       padding-top: 30px;
     }
   }
 
-  .contentHead{
+  .contentHead {
     padding-bottom: 10px;
-    .contentTitle{
+    .contentTitle {
       font-size: 36px;
       line-height: 42px;
       color: var(--primary);
       font-weight: 400;
       margin-bottom: 20px;
-      @media screen and (max-width:991.98px) {
+      @media screen and (max-width: 991.98px) {
         font-size: 22px;
         line-height: 30px;
       }
-      b{
+      b {
         font-weight: 700;
       }
     }
-    p{
+    p {
       font-size: 16px;
       line-height: 24px;
       color: #191919;
       font-weight: 400;
 
-      b{
+      b {
         font-weight: 700;
       }
     }
@@ -76,7 +76,7 @@
           width: 100%;
           max-width: 300px;
         }
-        &.type2{
+        &.type2 {
           width: calc(100% + 170px);
           left: -84px;
           top: -140px;
@@ -117,70 +117,70 @@
           font-weight: 700;
         }
 
-        .caption{
+        .caption {
           color: var(--third);
           font-size: 28px;
           line-height: 35px;
           font-weight: 700;
-          @media screen and (max-width:1440px) {
+          @media screen and (max-width: 1440px) {
             font-size: 24px;
             line-height: 32px;
           }
-          @media screen and (max-width:1366px) {
+          @media screen and (max-width: 1366px) {
             font-size: 20px;
             line-height: 27px;
           }
-          @media screen and (max-width:1280px) {
+          @media screen and (max-width: 1280px) {
             font-size: 18px;
             line-height: 25px;
           }
-          @media screen and (max-width:991.98px) {
+          @media screen and (max-width: 991.98px) {
             font-size: 16px;
             line-height: 22px;
             text-align: left;
           }
         }
-        ul{
+        ul {
           padding-top: 15px;
-          li{
+          li {
             position: relative;
             padding-left: 35px;
             font-size: 17px;
             line-height: 25px;
             color: #262626;
             font-weight: 400;
-            @media screen and (max-width:1280px) {
+            @media screen and (max-width: 1280px) {
               font-size: 15px;
               line-height: 22px;
             }
-            @media screen and (max-width:991.98px) {
+            @media screen and (max-width: 991.98px) {
               font-size: 14px;
               line-height: 21px;
               padding-top: 5px;
               padding-bottom: 5px;
               text-align: left;
             }
-            b{
+            b {
               font-weight: 700;
             }
-            &:before{
+            &:before {
               content: "\e905";
-              font-family: 'customFont';
+              font-family: "customFont";
               font-size: 27px;
               color: var(--third);
               position: absolute;
               left: 0;
               top: -2px;
-              @media screen and (max-width:991.98px) {
-               top: 4px;
+              @media screen and (max-width: 991.98px) {
+                top: 4px;
               }
             }
           }
         }
 
-        &.type2{
+        &.type2 {
           margin-top: -160px;
-          padding-bottom:20px;
+          padding-bottom: 20px;
           @media screen and (max-width: 991.98px) {
             margin-top: 0;
             width: calc(100% - 250px);
@@ -211,11 +211,243 @@
   }
 }
 
-
 /*İletişim*/
-.contactWrapper{
+.contactWrapper {
   padding-top: 55px;
-  @media screen and (max-width:991.98px) {
+  @media screen and (max-width: 991.98px) {
     padding-top: 0;
+  }
+}
+
+/*Kurumsal*/
+.corporateContent{
+  padding-top: 50px;
+
+  @media screen and (max-width: 480px) {
+    padding-top: 30px;
+  }
+}
+.questionSearchWrapper {
+  p {
+    font-size: 22px;
+    line-height: 29px;
+    font-weight: 700;
+    color: #1f1f1f;
+    @media screen and (max-width: 1440px) {
+      font-size: 20px;
+      line-height: 27px;
+    }
+    @media screen and (max-width: 1280px) {
+      font-size: 18px;
+      line-height: 25px;
+    }
+    @media screen and (max-width: 991.98px) {
+      font-size: 16px;
+      line-height: 23px;
+    }
+  }
+  .searchInputWrapper {
+    position: relative;
+    border: 2px solid #d8d8d8;
+    border-radius: 8px;
+    height: 86px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    margin-top: 16px;
+    @media screen and (max-width: 1440px) {
+      height: 60px;
+      padding: 7px 16px;
+    }
+    @media screen and (max-width: 991.98px) {
+      padding: 7px;
+      margin-top: 5px;
+    }
+    input[type="text"] {
+      width: calc(100% - 60px);
+      height: 62px;
+      font-size: 20px;
+      font-weight: 400;
+      color: #1f1f1f;
+      padding-right: 20px;
+      border: none;
+      @media screen and (max-width: 1440px) {
+        height: 46px;
+        font-size: 16px;
+        width: calc(100% - 46px);
+      }
+      @media screen and (max-width: 991.98px) {
+        font-size: 14px;
+      }
+      &:focus {
+        box-shadow: none;
+        outline: 0;
+      }
+      &::placeholder {
+        color: #cccccc;
+      }
+      &:-moz-placeholder {
+        color: #cccccc;
+      }
+      &::-moz-placeholder {
+        color: #cccccc;
+      }
+      &:-ms-input-placeholder {
+        color: #cccccc;
+      }
+      &::-webkit-input-placeholder {
+        color: #cccccc;
+      }
+    }
+    .questionSearchButton {
+      width: 60px;
+      min-width: 60px;
+      padding: 0;
+      height: 62px;
+
+      @media screen and (max-width: 1440px) {
+        height: 46px;
+        width: 46px;
+        height: 46px;
+        min-width: 46px;
+      }
+
+      .icon-search {
+        font-size: 36px;
+        @media screen and (max-width: 1440px) {
+          font-size: 32px;
+        }
+        @media screen and (max-width: 991.98px) {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}
+/*paragraf stiller*/
+
+.paragraph {
+  font-size: 17px;
+  line-height: 24px;
+  color: #202020;
+  font-weight: 400;
+  @media screen and (max-width: 991.98px) {
+    font-size: 14px;
+    line-height: 21px;
+  }
+  h1,
+  .title {
+    font-size: 43px;
+    line-height: 50px;
+    margin-bottom: 15px;
+    color: #262626;
+    font-weight: 800;
+    @media screen and (max-width:991.98px) {
+      font-size: 24px;
+      line-height: 32px;
+      margin-bottom: 10px;
+    }
+  }
+  span,
+  h2 {
+    font-size: 22px;
+    line-height: 30px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    color: var(--primary);
+    font-weight: 700;
+    display: block;
+    @media screen and (max-width: 991.98px) {
+      font-size: 18px;
+      line-height: 25px;
+      margin-top: 15px;
+      margin-bottom: 5px;
+    }
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+  h3 {
+    font-size: 18px;
+    line-height: 25px;
+    color: var(--third);
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: 700;
+    @media screen and (max-width: 991.98px) {
+      font-size: 16px;
+      line-height: 23px;
+      margin-top: 5px;
+      margin-bottom: 3px;
+    }
+  }
+  a {
+    font-weight: 700;
+    color: var(--primary);
+    &:before {
+      bottom: -1px;
+    }
+    @media screen and (min-width: 992px) {
+      &:hover {
+        &:before {
+          width: 0;
+        }
+      }
+    }
+  }
+  strong {
+    font-weight: 700;
+    display: block;
+  }
+  b {
+    font-weight: 700;
+  }
+  ol,
+  ul {
+    padding-left: 20px;
+    margin-top: 15px;
+    margin-bottom: 30px;
+    li {
+      padding-left: 10px;
+      padding-top: 5px;
+      padding-bottom: 5px;
+      &::marker {
+        color: var(--third);
+        font-weight: 700;
+        font-size: 16px;
+      }
+    }
+  }
+  ol {
+    list-style-type: decimal;
+    li {
+      &::marker {
+        font-size: 18px;
+      }
+    }
+  }
+  ul {
+    list-style-type: disc;
+    li {
+      padding-left: 0;
+    }
+  }
+}
+.corporateContent {
+  .corporateTextCol {
+    h1,
+    .title {
+      font-size: 43px;
+      line-height: 50px;
+      margin-bottom: 15px;
+      color: #262626;
+      font-weight: 800;
+      @media screen and (max-width:991.98px) {
+        font-size: 24px;
+        line-height: 32px;
+        margin-bottom: 10px;
+      }
+    }
   }
 }
