@@ -13,3 +13,10 @@ hr{
     border-top-color: var(--gray-5);
     opacity: 1;
 }
+
+body {
+  user-select: none; /* Metin seçimini engelle */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}

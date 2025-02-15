@@ -1,31 +1,8 @@
 .table-responsive {
   @media screen and (max-width: 640px) {
     position: relative;
-    padding-top: 40px;
-    &:after {
-      content: "";
-      position: absolute;
-      top: 13px;
-      left: 15px;
-      width: 24px;
-      height: 24px;
-      background-size: 24px;
-      background-image: url("../../images/statics/icons/hand.svg");
-      animation: leftoright 1s ease-in-out infinite;
-    }
   }
 }
-@keyframes leftoright {
-  0%,
-  100% {
-    transform: translate(0, 0);
-  }
-
-  50% {
-    transform: translate(10px, 0);
-  }
-}
-
 .table {
   min-width: 600px;
   th {
@@ -36,10 +13,17 @@
     font-weight: 700;
     vertical-align: middle;
     border-bottom: none;
+    @media screen and (max-width: 991.98px) {
+      height: 45px;
+      font-size: 15px;
+    }
 
     &:first-child {
       padding-left: 30px;
       border-radius: 5px 0 0 5px;
+      @media screen and (max-width: 991.98px) {
+        padding-left: 16px;
+      }
     }
     &:last-child {
       border-radius: 0 5px 5px 0;
@@ -58,10 +42,20 @@
       padding-left: 20px;
       padding-right: 20px;
       white-space: nowrap;
+      @media screen and (max-width: 991.98px) {
+        height: 45px;
+        font-size: 14px;
+        line-height: 21px;
+        padding-left: .5rem;
+        padding-right: .5rem;
+      }
       .customIcon {
         color: #c5c5c5;
         display: inline-block;
         margin-right: 20px;
+        @media screen and (max-width: 991.98px) {
+          margin-right: 6px;
+        }
       }
       &:first-child {
         border-radius: 5px 0 0 5px;
