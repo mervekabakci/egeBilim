@@ -160,6 +160,7 @@
       }
       &.revert {
         transform: rotate(180deg);
+        transform-origin: center;
       }
     }
     .file-name {

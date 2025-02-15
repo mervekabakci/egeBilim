@@ -196,12 +196,27 @@
             background-color: var(--white);
             border: 2px solid #e6e6e6;
             color: #262626;
+            // @media screen and (max-width: 991.98px) {
+            //   align-items: flex-start;
+            // }
+            // span {
+            //   &:not(.customIcon) {
+            //     @media screen and (max-width: 991.98px) {
+            //       display: inline-block;
+            //       padding-top: 5px;
+            //     }
+            //   }
+            // }
             .icon-question-square {
               color: var(--secondary);
             }
             .customIcon {
               font-size: 24px;
-              &.type2{
+              // @media screen and (max-width: 991.98px) {
+              //   top: 3px;
+              //   position: relative;
+              // }
+              &.type2 {
                 color: var(--secondary);
               }
             }
@@ -216,7 +231,7 @@
                 color: var(--white);
               }
               .customIcon {
-                &.type2{
+                &.type2 {
                   color: var(--white);
                 }
               }
@@ -236,7 +251,7 @@
                   background-color: #e68b35;
                 }
                 .customIcon {
-                  &.type2{
+                  &.type2 {
                     color: var(--white);
                   }
                 }
@@ -251,6 +266,9 @@
         .accordion-header {
           .accordion-button {
             color: #474747;
+            @media screen and (max-width: 991.98px) {
+              align-items: center;
+            }
             &:not(.collapsed) {
               color: var(--white);
             }
