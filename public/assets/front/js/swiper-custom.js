@@ -82,3 +82,38 @@ thirdSlide.forEach((wrapperElement) => {
     },
   });
 });
+
+
+
+/**ilkokul anasayfasındaki ogretmenler sliderı 4 lu kullanım standarttır */
+const quadSlide = document.querySelectorAll(".thisSlideWrapper");
+
+quadSlide.forEach((wrapperElement) => {
+  const sliderElement = wrapperElement.querySelector(".quadSlide");
+
+  // Eğer thirdSlide yoksa hata almamak için işlemi durdur
+  if (!sliderElement) return;
+
+  new Swiper(sliderElement, {
+    slidesPerView: 1,
+    spaceBetween: 25,
+    pagination: {
+      el: wrapperElement.querySelector(".swiper-pagination-single"),
+      clickable: true,
+    },
+    navigation: {
+      nextEl: wrapperElement.querySelector(".swiper-button-next"),
+      prevEl: wrapperElement.querySelector(".swiper-button-prev"),
+    },
+    breakpoints: {
+      640: {
+        slidesPerView: 2,
+        spaceBetween: 10,
+      },
+      992: {
+        slidesPerView: 4,
+        spaceBetween: 10,
+      },
+    },
+  });
+});

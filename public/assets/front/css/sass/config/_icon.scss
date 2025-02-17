@@ -26,6 +26,18 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-user-robot:before {
+  content: "\e92a";
+}
+.icon-book-heart:before {
+  content: "\e92b";
+}
+.icon-member-search:before {
+  content: "\e92c";
+}
+.icon-notebook:before {
+  content: "\e92d";
+}
 .icon-linkedin:before {
   content: "\e928";
 }

@@ -282,4 +282,57 @@
       }
     }
   }
+
+  &.primaryTheme{
+    .accordion{
+      .accordion-item {
+          background-color: rgba(0,0,0,0);
+          .accordion-header {
+          .accordion-button {
+            font-size: 18.5px;
+            line-height: 27px;
+            .customIcon{
+              color: var(--primary)!important;
+            }
+            &:after{
+              background-color: #e6e6e6;
+            }
+            &:not(.collapsed){
+              background-color: var(--primary);
+              border-color: var(--primary);
+              .customIcon{
+                color: var(--white)!important;
+              }
+              &:after{
+                background-color: #cf4929;
+              }
+            }
+            @media screen and (min-width:992px) {
+              &:hover{
+                color:var(--white);
+                background-color: var(--primary);
+                border-color: var(--primary);
+                .customIcon{
+                  color: var(--white)!important;
+                }
+                &:after{
+                  background-color: #cf4929;
+                }
+              }
+            }
+          }
+        }
+        .accordion-body{
+          background-color: rgba(0,0,0,0);
+          padding-bottom: 0;
+          .accordionContent{
+            padding-bottom: 5px;
+            padding-top: 0px;
+            padding-left: 0;
+            padding-right: 0;
+          }
+        }
+      }
+    }
+  }
 }

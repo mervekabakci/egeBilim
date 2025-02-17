@@ -295,6 +295,31 @@
     }
   }
 }
+
+.minusLeftContent {
+  // width: calc(100% + 100px);
+  width: calc(100% + 5.208333vw);
+  margin-left: -5.208333vw;
+  // margin-left: -100px;
+  @media screen and (max-width: 1366px) {
+    width: calc(100% + 50px);
+    margin-left: -50px;
+  }
+  @media screen and (max-width: 991.98px) {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+}
+.minusRightContent{
+  width: calc(100% + 9.84375vw);
+  margin-right: -9.84375vw;
+  @media screen and (max-width: 991.98px) {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+}
 .questionSearchWrapper {
   p {
     font-size: 22px;
