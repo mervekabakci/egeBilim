@@ -16,6 +16,7 @@ AOS.init({
   once: true,
 });
 
+
 /**Header menu button */
 $(".navbar-toggler").on("click", function () {
   $("html").toggleClass("overflow-hidden");
@@ -123,53 +124,53 @@ if (typeof Fancybox !== "undefined") {
   });
 }
 
-// document.oncontextmenu = document.body.oncontextmenu = function () {
-//   return false;
-// };
+document.oncontextmenu = document.body.oncontextmenu = function () {
+  return false;
+};
 
-// document.addEventListener("keydown", function (event) {
-//   if (event.ctrlKey && (event.key === "u" || event.key === "U")) {
-//       event.preventDefault();
-//   }
-//   if (event.ctrlKey && event.shiftKey && (event.key === "I" || event.key === "i")) {
-//       event.preventDefault();
-//   }
-//   if (event.key === "F12") {
-//       event.preventDefault();
-//   }
-// });
+document.addEventListener("keydown", function (event) {
+  if (event.ctrlKey && (event.key === "u" || event.key === "U")) {
+      event.preventDefault();
+  }
+  if (event.ctrlKey && event.shiftKey && (event.key === "I" || event.key === "i")) {
+      event.preventDefault();
+  }
+  if (event.key === "F12") {
+      event.preventDefault();
+  }
+});
 
-// // DevTools açık olup olmadığını kontrol eden fonksiyon
-// function isDevToolsOpen() {
-//   let devtoolsOpen = false;
-//   const threshold = 160; // Geliştirici araçları açıldığında fark edilen büyüklük farkı
+// DevTools açık olup olmadığını kontrol eden fonksiyon
+function isDevToolsOpen() {
+  let devtoolsOpen = false;
+  const threshold = 160; // Geliştirici araçları açıldığında fark edilen büyüklük farkı
 
-//   if (window.outerWidth - window.innerWidth > threshold || 
-//       window.outerHeight - window.innerHeight > threshold) {
-//       devtoolsOpen = true;
-//   }
+  if (window.outerWidth - window.innerWidth > threshold || 
+      window.outerHeight - window.innerHeight > threshold) {
+      devtoolsOpen = true;
+  }
 
-//   return devtoolsOpen;
-// }
+  return devtoolsOpen;
+}
 
-// // DevTools açık olduğunda yönlendirme yap
-// setInterval(function () {
-//   if (isDevToolsOpen()) {
-//       window.location.href = "https://google.com";
-//   }
-// }, 1000);
+// DevTools açık olduğunda yönlendirme yap
+setInterval(function () {
+  if (isDevToolsOpen()) {
+      window.location.href = "https://google.com";
+  }
+}, 1000);
 
-// // Geliştirici konsoluna özel bir mesaj yazıldığında hata fırlatan yöntem
-// (function () {
-//   let checkStatus = setInterval(function () {
-//       const devtools = /./;
-//       devtools.toString = function () {
-//           if (isDevToolsOpen()) {
-//               window.location.href = "https://google.com";
-//           }
-//           throw new Error("DevTools kapalı olmalıdır!");
-//       };
-//       console.log("%c", devtools);
-//   }, 1000);
-// })();
+// Geliştirici konsoluna özel bir mesaj yazıldığında hata fırlatan yöntem
+(function () {
+  let checkStatus = setInterval(function () {
+      const devtools = /./;
+      devtools.toString = function () {
+          if (isDevToolsOpen()) {
+              window.location.href = "https://google.com";
+          }
+          throw new Error("DevTools kapalı olmalıdır!");
+      };
+      console.log("%c", devtools);
+  }, 1000);
+})();
 

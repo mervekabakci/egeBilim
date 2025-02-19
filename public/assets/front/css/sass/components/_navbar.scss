@@ -316,6 +316,9 @@
               font-size: 21.5px;
               font-weight: 400;
               transition: all 0.3s linear;
+              @media screen and (max-width:1600px) {
+                font-size: 18px;
+              }
               @media screen and (max-width: 991.98px) {
                 color: var(--white);
                 display: flex;
