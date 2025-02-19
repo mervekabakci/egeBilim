@@ -3,7 +3,7 @@ $(document).ready(function () {
     if ($(window).width() < 992) {
       if (!$(".mobileDropdownTab .dropdown").length) {
         var dropdown = $(
-          '<div class="dropdown"><button class="btn btn-secondary dropdown-toggle" type="button" id="mobileDropdownMenu" data-bs-toggle="dropdown" aria-expanded="false"><span class="line"></span><span>Kurumsal</span></button><ul class="dropdown-menu" aria-labelledby="mobileDropdownMenu"></ul></div>'
+          '<div class="dropdown"><button class="btn btn-secondary dropdown-toggle" type="button" id="mobileDropdownMenu" data-bs-toggle="dropdown" aria-expanded="false"><span class="line"></span><span>Menü</span></button><ul class="dropdown-menu" aria-labelledby="mobileDropdownMenu"></ul></div>'
         );
 
         $(".mobileDropdownTab .nav-item").each(function () {

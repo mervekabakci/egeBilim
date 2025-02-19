@@ -48,6 +48,13 @@
         font-size: 14px;
         gap: 10px;
         white-space: nowrap;
+        padding: 0 10px;
+      }
+      @media screen and (max-width: 360px) {
+        font-size: 12px;
+        gap: 5px;
+        padding: 0 5px;
+        justify-content: center;
       }
       :before {
         color: #cacaca;
@@ -116,6 +123,9 @@
       left: 0;
       right: 0;
       z-index: -1;
+      @media screen and (max-width:991.98px) {
+        display: none;
+      }
     }
 
     &:not(.navLinkTab) {
@@ -202,12 +212,50 @@
     }
   }
 }
+#akademikBirimlerTab {
+  @media screen and (max-width: 991.98px) {
+    padding-left: 0;
+  }
+}
+#haberDuyurularTabContent {
+  .swiperButtons {
+    .customSwiperButton {
+        margin-top: -60px;
+    }
+  }
+}
 .customTabContent {
+  position: relative;
   .tabAllLink {
     position: absolute;
-    top: -56px;
+    top: -148px;
     color: var(--white);
     right: 0;
+    @media screen and (max-width: 1440px) {
+      top: -135px;
+    }
+    @media screen and (max-width: 991.98px) {
+      top: -93px;
+      left: 0;
+      margin: 0 auto;
+      text-align: center;
+      justify-content: center;
+    }
+  }
+}
+.mobileColumn {
+  .customTab {
+    @media screen and (max-width: 991.98px) {
+      flex-wrap: wrap;
+    }
+    .nav-item {
+      @media screen and (max-width: 991.98px) {
+        width: calc(50% - 10px);
+        .nav-link {
+          width: 100%;
+        }
+      }
+    }
   }
 }
 .mobileDropdownTab {
@@ -322,6 +370,7 @@
     width: 68%;
     @media screen and (max-width: 991.98px) {
       width: 100%;
+      text-align: center;
     }
     .caption {
       font-weight: 400;
@@ -416,6 +465,9 @@
     margin-top: 20px;
     padding-bottom: 20px;
   }
+  @media screen and (max-width: 991.98px) {
+    text-align: left;
+  }
   li {
     font-size: 21px;
     line-height: 29px;
@@ -473,13 +525,17 @@
   .propsList {
     display: flex;
     align-items: stretch;
-    flex-wrap: wrap;
     gap: 18px;
+    width: 100%;
     @media screen and (max-width: 670px) {
-      flex-direction: column;
-      align-items: flex-start;
+      // flex-direction: column;
+      // align-items: flex-start;
       width: 100%;
-      max-width: 400px;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    @media screen and (max-width: 480px) {
+      gap: 5px;
     }
     .item {
       display: flex;
@@ -490,13 +546,32 @@
       padding: 0 11px;
       min-height: 44px;
       gap: 15px;
-      flex: 1;
-      white-space: nowrap;
-      & > span{
-        font-size: 28px;
+      // white-space: nowrap;
+      width: 33%;
+      @media screen and (max-width: 1280px) {
+        gap: 5px;
+        padding: 0 7px;
       }
-      @media screen and (max-width: 670px) {
-        width: 100%;
+      @media screen and (max-width: 991.98px) {
+        max-width: calc(33.3% - 7px);
+        width: calc(33.3% - 7px);
+      }
+      @media screen and (max-width: 640px) {
+        min-width: initial;
+        max-width: calc(33.3% - 7px);
+        width: calc(33.3% - 7px);
+      }
+      @media screen and (max-width: 420px) {
+        border-width: 1px;
+      }
+      & > span {
+        font-size: 28px;
+        @media screen and (max-width: 1280px) {
+          font-size: 20px;
+        }
+        @media screen and (max-width: 420px) {
+          font-size: 12px;
+        }
       }
 
       .title {
@@ -504,6 +579,14 @@
         color: var(--text);
         line-height: 17px;
         font-weight: 400;
+        text-align: left;
+        @media screen and (max-width: 1280px) {
+          font-size: 12px;
+        }
+        @media screen and (max-width: 420px) {
+          font-size: 8px;
+          line-height: 11px;
+        }
         b {
           font-weight: 700;
           display: block;
@@ -513,16 +596,17 @@
   }
 
   .fixBtn {
+    min-width: 150px;
     @media screen and (max-width: 991.98px) {
       width: 100%;
     }
   }
 
-  &.light{
-    .propsList{
-      .item{
-          color: var(--white);
-          .title{
+  &.light {
+    .propsList {
+      .item {
+        color: var(--white);
+        .title {
           color: var(--white);
         }
       }

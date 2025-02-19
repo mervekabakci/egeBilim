@@ -539,8 +539,11 @@
       @media screen and (max-width: 1280px) {
         padding-top: 30px;
       }
-      @media screen and (max-width: 480px) {
+      @media screen and (max-width:991.98px) {
         height: 150px;
+      }
+      @media screen and (max-width: 480px) {
+        height: 130px;
       }
       &:nth-child(even) {
         background-color: var(--secondary);
@@ -603,6 +606,11 @@
         padding-right: 40px;
       }
     }
+  }
+}
+.ratesWrapper ~ .customAcc{
+  @media screen and (max-width:991.98px) {
+    padding-top: 20px;
   }
 }
 

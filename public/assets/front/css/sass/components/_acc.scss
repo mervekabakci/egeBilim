@@ -10,6 +10,9 @@
     .accordion-item {
       margin-bottom: 20px;
       border-bottom: none;
+      @media screen and (max-width:991.98px) {
+        margin-bottom: 10px;
+      }
       .accordion-header {
         .accordion-button {
           background-color: #dfdfdf;
@@ -27,6 +30,8 @@
             font-size: 16px;
             min-height: 45px;
             line-height: 22px;
+            padding-top: 5px;
+            padding-bottom: 5px;
           }
 
           &:after {
@@ -283,7 +288,10 @@
     }
   }
 
-  &.primaryTheme{
+  &.primaryTheme,
+  &.secondaryTheme,
+  &.thirdTheme,
+  &.fourthTheme{
     .accordion{
       .accordion-item {
           background-color: rgba(0,0,0,0);
@@ -291,35 +299,14 @@
           .accordion-button {
             font-size: 18.5px;
             line-height: 27px;
-            .customIcon{
-              color: var(--primary)!important;
+            @media screen and (max-width:991.98px) {
+              font-size: 15px;
+              line-height: 21px;
             }
             &:after{
               background-color: #e6e6e6;
             }
-            &:not(.collapsed){
-              background-color: var(--primary);
-              border-color: var(--primary);
-              .customIcon{
-                color: var(--white)!important;
-              }
-              &:after{
-                background-color: #cf4929;
-              }
-            }
-            @media screen and (min-width:992px) {
-              &:hover{
-                color:var(--white);
-                background-color: var(--primary);
-                border-color: var(--primary);
-                .customIcon{
-                  color: var(--white)!important;
-                }
-                &:after{
-                  background-color: #cf4929;
-                }
-              }
-            }
+           
           }
         }
         .accordion-body{
@@ -330,6 +317,134 @@
             padding-top: 0px;
             padding-left: 0;
             padding-right: 0;
+          }
+        }
+      }
+    }
+  }
+  &.primaryTheme{
+    .accordion{
+      .accordion-button {
+        .customIcon{
+          color: var(--primary)!important;
+        }
+        &:not(.collapsed){
+          background-color: var(--primary)!important;
+          border-color: var(--primary)!important;
+          .customIcon{
+            color: var(--white)!important;
+          }
+          &:after{
+            background-color: #cf4929!important;
+          }
+        }
+        @media screen and (min-width:992px) {
+          &:hover{
+            color:var(--white);
+            background-color: var(--primary)!important;
+            border-color: var(--primary)!important;
+            .customIcon{
+              color: var(--white)!important;
+            }
+            &:after{
+              background-color: #cf4929!important;
+            }
+          }
+        }
+      }
+    }
+  }
+  &.secondaryTheme{
+    .accordion{
+      .accordion-button {
+        .customIcon{
+          color: var(--secondary)!important;
+        }
+        &:not(.collapsed){
+          background-color: var(--secondary)!important;
+          border-color: var(--secondary)!important;
+          .customIcon{
+            color: var(--white)!important;
+          }
+          &:after{
+            background-color: #f1953e!important;
+          }
+        }
+        @media screen and (min-width:992px) {
+          &:hover{
+            color:var(--white);
+            background-color: var(--secondary)!important;
+            border-color: var(--secondary)!important;
+            .customIcon{
+              color: var(--white)!important;
+            }
+            &:after{
+              background-color: #f1953e!important;
+            }
+          }
+        }
+      }
+    }
+  }
+  &.thirdTheme{
+    .accordion{
+      .accordion-button {
+        .customIcon{
+          color: var(--third)!important;
+        }
+        &:not(.collapsed){
+          background-color: var(--third)!important;
+          border-color: var(--third)!important;
+          .customIcon{
+            color: var(--white)!important;
+          }
+          &:after{
+            background-color: #47973e!important;
+          }
+        }
+        @media screen and (min-width:992px) {
+          &:hover{
+            color:var(--white);
+            background-color: var(--third)!important;
+            border-color: var(--third)!important;
+            .customIcon{
+              color: var(--white)!important;
+            }
+            &:after{
+              background-color: #47973e!important;
+            }
+          }
+        }
+      }
+    }
+  }
+  &.fourthTheme{
+    .accordion{
+      .accordion-button {
+        .customIcon{
+          color: var(--fourth)!important;
+        }
+        &:not(.collapsed){
+          background-color: var(--fourth)!important;
+          border-color: var(--fourth)!important;
+          .customIcon{
+            color: var(--white)!important;
+          }
+          &:after{
+            background-color: #2970db!important;
+          }
+        }
+        @media screen and (min-width:992px) {
+          &:hover{
+            color:var(--white);
+            background-color: var(--fourth)!important;
+            border-color: var(--fourth)!important;
+            .customIcon{
+              color: var(--white)!important;
+            }
+            &:after{
+              background-color: #2970db!important;
+            }
           }
         }
       }

@@ -112,15 +112,20 @@
         position: absolute;
         top: 7px;
         left: 10px;
-        border-top: 11px dotted #cecece;
+        // border-top: 11px dotted #cecece;
         width: calc(100% - 17px);
         transition: all 1s ease-in-out;
+        background-image: url('../../images/statics/dotted.svg');
+        background-size: 16px 11px;
+        background-position: center;
+        background-repeat: repeat-x;
+        height: 11px;
       }
     }
     &.visible{
       .info{
         &:after{
-          border-top-color: var(--secondary);
+          background-image: url('../../images/statics/dotted-color.svg');
         }
       }
     }
